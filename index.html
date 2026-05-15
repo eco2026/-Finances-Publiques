@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finances Publiques - Cours complet détaillé (Français + Arabe) + Tableau des abréviations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Cairo', sans-serif;
+            background: #eef2f7;
+            color: #1e293b;
+            line-height: 1.65;
+            padding: 1.5rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0c4a6e, #0891b2);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        .header h1 i {
+            margin-right: 1rem;
+            color: #facc15;
+        }
+
+        .uni {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .exam-badge {
+            background: #facc15;
+            color: #0c4a6e;
+            display: inline-block;
+            padding: 0.4rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        /* Navigation Tabs */
+        .tabs-nav {
+            display: flex;
+            background: #e2e8f0;
+            border-bottom: 3px solid #0c4a6e;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 1.2rem 0.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Cairo', 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tab-btn i {
+            font-size: 1.3rem;
+        }
+
+        .tab-btn:hover {
+            background: #cbd5e1;
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: #0c4a6e;
+            border-bottom: 3px solid #0c4a6e;
+            margin-bottom: -3px;
+        }
+
+        /* Content Panels */
+        .tab-pane {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        /* Bilingual blocks */
+        .bilingual-block {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            margin-bottom: 1.8rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .fr-text {
+            padding: 1.2rem 1.5rem;
+            background: #f8fafc;
+            border-right: 5px solid #0c4a6e;
+            font-family: 'Inter', monospace;
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: #0f172a;
+        }
+
+        .ar-text {
+            padding: 1rem 1.5rem;
+            background: #fffbeb;
+            border-right: 5px solid #facc15;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #78350f;
+            direction: rtl;
+        }
+
+        .ar-text i {
+            margin-left: 8px;
+            color: #d97706;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #0c4a6e;
+            border-bottom: 4px solid #facc15;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            margin: 1rem 0 1.8rem 0;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #1e3a5f;
+            margin: 1.2rem 0 0.8rem 0;
+            font-weight: 700;
+            background: #eef2ff;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+        }
+
+        h4 {
+            font-size: 1.15rem;
+            color: #2d3748;
+            margin: 1rem 0 0.5rem 0;
+            font-weight: 600;
+            padding-right: 0.5rem;
+            border-right: 3px solid #facc15;
+        }
+
+        ul, .ul-principes {
+            margin: 0.8rem 0 0.8rem 1.5rem;
+        }
+
+        li {
+            margin: 0.4rem 0;
+        }
+
+        .note-examen {
+            background: #dbeafe;
+            border-radius: 14px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            font-weight: 600;
+            color: #1e40af;
+            border: 1px dashed #2563eb;
+        }
+
+        /* Tableau des abréviations */
+        .abbrev-table {
+            margin: 2rem 0 1rem;
+            overflow-x: auto;
+        }
+        .abbrev-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .abbrev-table th {
+            background: #0c4a6e;
+            color: white;
+            padding: 1rem;
+            font-weight: 700;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .abbrev-table td {
+            border: 1px solid #e2e8f0;
+            padding: 0.8rem 1rem;
+            vertical-align: top;
+        }
+        .abbrev-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        .abbrev-table .fr-abbr {
+            font-weight: 700;
+            color: #0c4a6e;
+            font-family: monospace;
+        }
+
+        footer {
+            background: #f1f5f9;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            color: #475569;
+            border-top: 1px solid #cbd5e1;
+        }
+
+        @media (max-width: 768px) {
+            .tab-pane {
+                padding: 1rem;
+            }
+            .fr-text, .ar-text {
+                padding: 0.8rem 1rem;
+            }
+            .tab-btn {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1><i class="fas fa-landmark"></i> Finances Publiques</h1>
+        <div class="uni">Université Hassan 1<sup>er</sup> de Settat · Faculté d’économie et de gestion<br> Professeur Abdelaziz EL OUALI · Semestre 4 · Année 2020-2021</div>
+        <div class="exam-badge"><i class="fas fa-graduation-cap"></i> Préparation examen · Cours complet détaillé (français + arabe) + tableau des abréviations</div>
+    </div>
+
+    <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="ch1"><i class="fas fa-book-open"></i> الفصل 1<br><span style="font-size:0.65rem;">Chapitre 1</span></button>
+        <button class="tab-btn" data-tab="ch2"><i class="fas fa-chart-pie"></i> الفصل 2<br><span style="font-size:0.65rem;">Chapitre 2</span></button>
+        <button class="tab-btn" data-tab="ch3"><i class="fas fa-city"></i> الفصل 3<br><span style="font-size:0.65rem;">Chapitre 3</span></button>
+        <button class="tab-btn" data-tab="abbrev"><i class="fas fa-list-ul"></i> اختصارات<br><span style="font-size:0.65rem;">Abréviations</span></button>
+    </div>
+
+    <!-- ==================== CHAPITRE 1 : CADRE GENERAL ==================== -->
+    <div id="ch1" class="tab-pane active">
+        <h2>📘 Chapitre 1 : Cadre général des finances publiques</h2>
+        <div class="note-examen"><i class="fas fa-star-of-life"></i> À mémoriser pour l'examen : définition, les 3 fonctions de Musgrave, les 3 périodes historiques, les principes budgétaires et les 4 approches.</div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Introduction :</strong> Les finances publiques étudient l'ensemble des techniques, des opérations et des règles régissant les recettes, les dépenses, l'exécution et le contrôle de ces recettes et ces dépenses publiques. Elles englobent: les finances de l'État; les finances des collectivités territoriales et établissements publics; les finances des personnes de droit privé soumises au contrôle des juridictions financières (syndicats, partis politiques); les finances des groupements régionaux (UE, UA).</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>الترجمة: مقدمة</strong><br> تدرس المالية العامة مجموعة التقنيات والعمليات والقواعد التي تنظم الإيرادات والنفقات وتنفيذها ومراقبتها. تشمل: مالية الدولة، مالية الجماعات الترابية والمؤسسات العمومية، مالية الأشخاص الخاضعين للقانون الخاص الخاضعين لرقابة المحاكم المالية (النقابات، الأحزاب السياسية)، ومالية التجمعات الجهوية (الاتحاد الأوروبي، الاتحاد الإفريقي).</div>
+        </div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Richard Abel Musgrave (1910-2007)</strong> dans sa théorie des finances publiques avance trois fonctions : <br> - La fonction d'allocation : satisfaction des besoins publics (éducation, sécurité, santé) à partir des biens publics.<br> - La fonction de stabilisation (keynésienne) : augmentation des dépenses publiques pour soutenir revenu national et emploi.<br> - La fonction de redistribution : transferts entre individus ou groupes sociaux par les impôts et dépenses publiques.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>الترجمة: ريتشارد آبل موسغريف</strong> يقدم ثلاث وظائف للمالية العامة:<br> • وظيفة التخصيص: إشباع الحاجات العامة عبر السلع العامة.<br> • وظيفة الاستقرار (الكينزية): زيادة الإنفاق العام لدعم الدخل القومي والتشغيل.<br> • وظيفة إعادة التوزيع: تحويلات بين الأفراد أو الفئات الاجتماعية عبر الضرائب والنفقات العامة.</div>
+        </div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Différence finances publiques / finances privées :</strong> Les FP concernent les organismes publics (intérêt général, droit public) ; les finances privées concernent les entreprises privées (profit, droit privé). Techniques de gestion différentes.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>الفرق بين المالية العامة والمالية الخاصة:</strong> المالية العامة تخص الهيئات العمومية (مصلحة عامة، قانون عام)؛ المالية الخاصة تخص المؤسسات الخاصة (الربح، القانون الخاص). تقنيات التسيير مختلفة.</div>
+        </div>
+
+        <h3>Section 1 : Cadre historique</h3>
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>1- Finances classiques (État gendarme) :</strong> budget limité, équilibré, financé par impôts. Apparition des principes d'annualité, universalité, spécialité.<br>
+            <strong>2- Finances modernes (après 1929, Keynes) :</strong> accroissement dépenses publiques, déficit budgétaire, recours à l'emprunt.<br>
+            <strong>3- Finances contemporaines (années 80) :</strong> retour au libéralisme, désengagement de l'État, programmes d'ajustement structurel (FMI/Banque mondiale), nouveaux principes : sincérité, transparence, équilibre.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>التطور التاريخي:</strong><br> 
+            • الكلاسيكية (دولة الدرك): ميزانية محدودة ومتوازنة، تمويل عبر الضرائب، مبادئ السنوية والشمولية والتخصص.<br>
+            • الحديثة (بعد 1929، كينز): زيادة النفقات العامة، عجز الميزانية، اللجوء إلى القروض.<br>
+            • المعاصرة (الثمانينيات): العودة إلى الليبرالية، انسحاب الدولة، برامج التكيف الهيكلي، مبادئ جديدة (الصدق، الشفافية، التوازن).</div>
+        </div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Évolution des finances publiques au Maroc :</strong><br>
+            <strong>Avant indépendance :</strong> Corps des Oumanas (Moulay Slimane), trois trésors (Bit el mal, dar adyel, trésor du Sultan). Premier budget 1910 (Chaouia). Dahir du 9 juin 1917 organisant la comptabilité publique.<br>
+            <strong>Après indépendance – fin 70 :</strong> Dahir 1958, Constitution 1962, loi organique 1963, puis 1970/1972. État d'exception 1965 → suspension du parlement.<br>
+            <strong>Années 80 à aujourd'hui :</strong> Crise économique, PAS, réforme LOLF 1998, puis nouvelle LOLF n°130.13 (2015) suite Constitution 2011. Modernisation : globalisation des crédits, déconcentration, performance, genre.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>تطور المالية العامة في المغرب:</strong><br>
+            • قبل الاستقلال: نظام العُمانيين، ثلاثة خزائن، أول ميزانية 1910، ظهير 1917.<br>
+            • بعد الاستقلال - نهاية السبعينيات: ظهير 1958، دستور 1962، قانون تنظيمي 1963، حالة الاستثناء 1965.<br>
+            • من الثمانينيات إلى اليوم: أزمة اقتصادية، برامج التكيف الهيكلي، إصلاح القانون التنظيمي 1998، ثم القانون التنظيمي 130.13 لسنة 2015.</div>
+        </div>
+
+        <h3>Section 2 : Cadre juridique au Maroc</h3>
+        <div class="bilingual-block">
+            <div class="fr-text">Textes principaux : Constitution 2011, LOLF n°130.13, Décret Royal 330-66 (comptabilité publique), Code des juridictions financières 62-99, décret 2-15-426, décret contrôle des dépenses, jurisprudence financière.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>النصوص الأساسية:</strong> دستور 2011، القانون التنظيمي لقانون المالية 130.13، الظهير الملكي 330-66 (المحاسبة العمومية)، مدونة المحاكم المالية 62-99، مرسوم مراقبة النفقات، الاجتهاد القضائي المالي.</div>
+        </div>
+
+        <h3>Section 3 : Cadre normatif (Principes)</h3>
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>1. Annualité :</strong> crédits valables un an (art.3 LOLF). Dérogations : autorisations pluriannuelles (art.75 Constitution), report de 30% des crédits d'investissement.<br>
+            <strong>2. Unité :</strong> un seul document. Dérogations : SEGMA, comptes spéciaux.<br>
+            <strong>3. Universalité :</strong> non-compensation (recettes brutes) et non-affectation (art.8 LOLF). Exceptions : SEGMA, CST, fonds de concours.<br>
+            <strong>4. Spécialité :</strong> vote détaillé des crédits (atténué par budget programme).<br>
+            <strong>5. Équilibre :</strong> recettes = dépenses (objectif, moins contraignant pour l'État).<br>
+            <strong>6. Sincérité :</strong> information honnête (art.10 et 31 LOLF). La Cour des comptes certifie.<br>
+            <strong>7. Séparation ordonnateurs/comptables :</strong> incompatibilité (art.4 décret CP).<br>
+            <strong>8. Égalité fiscale :</strong> art.39 et 40 Constitution (égalité devant l'impôt et les charges publiques).</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>المبادئ:</strong><br>
+            1. السنوية: اعتمادات سنة واحدة (مع استثناءات).<br>2. الوحدة: وثيقة واحدة.<br>3. الشمولية: عدم المقاصة وعدم التخصيص.<br>4. التخصص: التصويت التفصيلي.<br>5. التوازن: إيرادات = نفقات.<br>6. الصدق: معلومات صادقة (المادة 10 و31). محكمة المحاسبات تصادق.<br>7. الفصل بين الآمرين بالصرف والمحاسبين.<br>8. المساواة الجبائية (الفصل 39 و40 من الدستور).</div>
+        </div>
+
+        <h3>Section 4 : Approches des finances publiques</h3>
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Approche juridique :</strong> étude des règles (préparation, vote, exécution, contrôle).<br>
+            <strong>Approche économique :</strong> effets sur l'économie (allocation, redistribution, emploi).<br>
+            <strong>Approche managériale (NPM) :</strong> performance, transparence, évaluation, audit.<br>
+            <strong>Approche sociologique :</strong> rapports entre finances publiques et société (démocratie fiscale, comportement électoral).</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>المقاربات الأربع:</strong> قانونية (دراسة القواعد)، اقتصادية (الآثار الاقتصادية)، تسييرية (الأداء والشفافية)، سوسيولوجية (العلاقة مع المجتمع والديمقراطية المالية).</div>
+        </div>
+    </div>
+
+    <!-- ==================== CHAPITRE 2 : LOI DE FINANCES ==================== -->
+    <div id="ch2" class="tab-pane">
+        <h2>💰 Chapitre 2 : Les finances de l’État – Loi de finances et cycle budgétaire</h2>
+        <div class="note-examen"><i class="fas fa-star-of-life"></i> À maîtriser : définition loi de finances, types (initiale, rectificative, règlement), structure (budget général, SEGMA, CST), et les 4 phases du cycle budgétaire.</div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Section 1 : Notions</strong><br> La loi de finances (art.1 LOLF) détermine ressources et charges de l'État et l'équilibre budgétaire. Le budget est la partie chiffrée de la loi de finances.<br>
+            <strong>Types :</strong> Loi de finances de l'année (initiale), Loi de finances rectificative (modifications en cours d'année), Loi de règlement (constate le résultat définitif, art.76 Constitution).</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>مفاهيم أساسية:</strong> قانون المالية يحدد موارد الدولة ونفقاتها وتوازنها الميزانياتي. الميزانية هي الجزء الرقمي. الأنواع: قانون مالية السنة (الأولي)، قانون مالية تصحيحي، قانون تسوية (يحدد النتيجة النهائية، الفصل 76 من الدستور).</div>
+        </div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Structure de la loi de finances :</strong> Deux parties : 1ère partie (équilibre général, autorisations, plafonds) ; 2ème partie (dépenses par chapitre, SEGMA, CST).<br>
+            <strong>Ressources :</strong> fiscales (IR, IS, TVA, douane), non fiscales (domaine, amendes), emprunts.<br>
+            <strong>Charges :</strong> dépenses du budget général (fonctionnement, investissement, dette) + SEGMA + CST.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>هيكل قانون المالية:</strong> جزآن: الأول (التوازن العام والتفويضات)، الثاني (النفقات حسب الفصول). الموارد: جبائية (الضريبة على الدخل، الشركات، القيمة المضافة، الجمارك)، غير جبائية، قروض. النفقات: الميزانية العامة (تسيير، تجهيز، دين) + ميزانيات المرافق المستقلة + حسابات الخزينة الخاصة.</div>
+        </div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Budget général :</strong> fonctionnement (personnel, intervention), investissement (routes, hôpitaux), dette (intérêts et amortissement).<br>
+            <strong>SEGMA :</strong> services sans personnalité morale, ressources propres (ex: centres hospitaliers, centres régionaux d'investissement).<br>
+            <strong>Comptes spéciaux du Trésor :</strong> 5 catégories : affectation spéciale, adhésion aux organismes internationaux, financement, opérations monétaires, dépenses sur dotation.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>مكونات ميزانية الدولة:</strong> الميزانية العامة (تسيير، تجهيز، دين). المرافق المستقلة (SEGMA): خدمات بدون شخصية معنوية، موارد ذاتية. حسابات الخزينة الخاصة: 5 فئات (تخصيص خاص، الانضمام للمنظمات الدولية، التمويل، العمليات النقدية، نفقات على اعتمادات).</div>
+        </div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Nouvelle nomenclature budgétaire (LOLF 130.13) :</strong> présentation par programmes, régions, actions (budget programme axé sur la performance). Annexes : rapport économique, dépenses fiscales, dette, compensation, rapport genre, etc.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>التسمية الميزانياتية الجديدة:</strong> عرض حسب البرامج والجهات والإجراءات (ميزانية البرامج الموجهة بالأداء). المرفقات: تقرير اقتصادي، النفقات الضريبية، الدين، التعويضات، تقرير النوع الاجتماعي.</div>
+        </div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Section 3 : Le cycle budgétaire</strong><br> Règle des quatre temps alternés : préparation (exécutif) → vote (législatif) → exécution (exécutif) → contrôle (législatif). Nouveauté LOLF : association du Parlement dès la préparation (débat avant 31 juillet).<br>
+            <strong>Calendrier :</strong> 20 octobre dépôt PLF, 30 jours Chambre des représentants, 22 jours Chambre des conseillers, vote final.<br>
+            <strong>Exécution :</strong> ordonnateurs et comptables (séparation des fonctions).<br>
+            <strong>Contrôle :</strong> interne (IGF, CED) et externe (Cour des comptes, Parlement).</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>الدورة الميزانياتية:</strong> قاعدة الأزمنة الأربعة: إعداد (تنفيذي) → تصويت (تشريعي) → تنفيذ (تنفيذي) → مراقبة (تشريعي). الجديد: إشراك البرلمان منذ مرحلة الإعداد (مناقشة قبل 31 يوليو). التقويم: 20 أكتوبر إيداع المشروع، 30 يوماً لمجلس النواب، 22 يوماً لمجلس المستشارين، تصويت نهائي. التنفيذ بواسطة الآمرين بالصرف والمحاسبين. المراقبة الداخلية والخارجية (محكمة المحاسبات).</div>
+        </div>
+    </div>
+
+    <!-- ==================== CHAPITRE 3 : COLLECTIVITÉS TERRITORIALES ==================== -->
+    <div id="ch3" class="tab-pane">
+        <h2>🏛️ Chapitre 3 : Les finances des collectivités territoriales</h2>
+        <div class="note-examen"><i class="fas fa-star-of-life"></i> À retenir : spécificités (équilibre contraignant, dépenses obligatoires, tutelle), structure du budget (fonctionnement/équipement), et le cycle budgétaire spécifique.</div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Cadre juridique :</strong> Lois organiques n°113-14 (communes), n°111-14 (régions), loi n°112-14 (préfectures/provinces), loi 47-06 fiscalité CT, décret comptabilité publique des CT, code des juridictions financières.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>الإطار القانوني:</strong> قوانين تنظيمية رقم 113-14 (الجماعات)، 111-14 (الجهات)، قانون رقم 112-14 (العمالات والأقاليم)، قانون 47-06 الخاص بالجباية المحلية، مرسوم المحاسبة العمومية للجماعات، مدونة المحاكم المالية.</div>
+        </div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Spécificités :</strong><br>
+            - Mêmes principes budgétaires MAIS équilibre <strong>contraignant</strong> (fonctionnement et équipement).<br>
+            - Pouvoir fiscal limité (impôts locaux : patente, taxe d'édilité, taxe urbaine).<br>
+            - Dépenses obligatoires : traitements, eau/électricité, dettes, jugements, dotations.<br>
+            - Contrôle de tutelle : visa du gouverneur ou ministre avant exécution.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>الخصوصيات:</strong><br>
+            - نفس المبادئ الميزانياتية ولكن التوازن <strong>إلزامي</strong> (التسيير والتجهيز).<br>
+            - سلطة جبائية محدودة (الضريبة المهنية، ضريبة التجهيز، الضريبة الحضرية).<br>
+            - نفقات إجبارية: الأجور، الماء/الكهرباء، الديون، الأحكام القضائية.<br>
+            - رقابة الوصاية: مصادقة الوالي أو الوزير قبل التنفيذ.</div>
+        </div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Structure du budget des CT :</strong> Deux parties (fonctionnement et équipement) + budgets annexes + comptes spéciaux.<br>
+            <strong>Ressources :</strong> impôts locaux, parts d'impôts nationaux, redevances, emprunts, subventions, dons.<br>
+            <strong>Charges :</strong> dépenses de personnel, équipement, dettes, contributions aux groupements.<br>
+            Documents annexes : programmation triennale, projet de performance, état des engagements, annuités dettes, états recettes/dépenses antérieures.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>هيكل ميزانية الجماعات:</strong> جزآن (تسيير وتجهيز) + ميزانيات ملحقة + حسابات خاصة. الموارد: ضرائب محلية، حصص ضرائب وطنية، رسوم، قروض، دعم. النفقات: تكاليف الموظفين، تجهيز، ديون. الوثائق الملحقة: برمجة ثلاثية، مشروع الأداء، حالة الالتزامات، جدول أقساط الديون.</div>
+        </div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Cycle budgétaire des CT :</strong><br>
+            - Élaboration par le président du conseil (sur programmation triennale glissante).<br>
+            - Adoption par l'assemblée délibérante (session du conseil).<br>
+            - Visa de la tutelle (vérification: respect des lois, équilibre sincère, dépenses obligatoires).<br>
+            - Exécution : ordonnateur (président) et comptable (trésorier).<br>
+            - Contrôle : tutelle, IGF, inspection générale de l'administration territoriale, cours régionales des comptes.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>الدورة الميزانياتية للجماعات الترابية:</strong><br>
+            - الإعداد: رئيس المجلس (برمجة ثلاثية متجددة).<br>
+            - التصويت: المجلس المنتخب.<br>
+            - مصادقة الوصاية (مراقبة احترام القوانين، التوازن الصادق، النفقات الإجبارية).<br>
+            - التنفيذ: آمر الصرف (الرئيس) والمحاسب (الخزين).<br>
+            - المراقبة: الوصاية، المفتشية العامة للمالية، المفتشية العامة للإدارة الترابية، الغرف الجهوية للحسابات.</div>
+        </div>
+
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Différence majeure avec l'État :</strong> L'équilibre budgétaire est impératif pour les CT. L'excédent de fonctionnement est automatiquement affecté à la section d'équipement. La tutelle peut saisir le juge financier en cas de déséquilibre grave.</div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>الفرق الكبير مع الدولة:</strong> التوازن الميزانياتي إلزامي بالنسبة للجماعات الترابية. فائض التسيير يُخصص تلقائياً للتجهيز. يمكن للوصاية إحالة الأمر على القاضي المالي في حالة اختلال خطير.</div>
+        </div>
+    </div>
+
+    <!-- ==================== TABLEAU DES ABRÉVIATIONS ==================== -->
+    <div id="abbrev" class="tab-pane">
+        <h2><i class="fas fa-list-ul"></i> Tableau des abréviations / acronymes</h2>
+        <div class="note-examen"><i class="fas fa-star-of-life"></i> À connaître par cœur pour l'examen : ces abréviations sont fréquemment utilisées dans les copies et les questions de cours.</div>
+
+        <div class="abbrev-table">
+            <table>
+                <thead>
+                    <tr><th>Abréviation</th><th>Signification en français</th><th>الترجمة بالعربية</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="fr-abbr">NPM</td><td>New Public Management (nouvelle gestion publique)</td><td>الإدارة العمومية الجديدة (تسيير حديث قائم على الأداء)</td></tr>
+                    <tr><td class="fr-abbr">LOLF</td><td>Loi organique relative à la loi de finances</td><td>القانون التنظيمي المتعلق بقانون المالية</td></tr>
+                    <tr><td class="fr-abbr">SEGMA</td><td>Services de l'État gérés de manière autonome</td><td>مرافق الدولة المسيرة بطريقة مستقلة</td></tr>
+                    <tr><td class="fr-abbr">CST</td><td>Comptes spéciaux du Trésor</td><td>الحسابات الخاصة للخزينة</td></tr>
+                    <tr><td class="fr-abbr">PLF</td><td>Projet de loi de finances</td><td>مشروع قانون المالية</td></tr>
+                    <tr><td class="fr-abbr">IGF</td><td>Inspection générale des finances</td><td>التفتيش العام للمالية</td></tr>
+                    <tr><td class="fr-abbr">IGAT</td><td>Inspection générale de l'administration territoriale</td><td>التفتيش العام للإدارة الترابية</td></tr>
+                    <tr><td class="fr-abbr">IGM</td><td>Inspection générale des ministères</td><td>التفتيش العام للوزارات</td></tr>
+                    <tr><td class="fr-abbr">CED</td><td>Contrôle des engagements des dépenses</td><td>مراقبة الالتزام بالنفقات</td></tr>
+                    <tr><td class="fr-abbr">PAS</td><td>Programme d'ajustement structurel</td><td>برنامج التكيف الهيكلي</td></tr>
+                    <tr><td class="fr-abbr">FMI</td><td>Fonds monétaire international</td><td>صندوق النقد الدولي</td></tr>
+                    <tr><td class="fr-abbr">UE</td><td>Union européenne</td><td>الاتحاد الأوروبي</td></tr>
+                    <tr><td class="fr-abbr">UA</td><td>Union africaine</td><td>الاتحاد الإفريقي</td></tr>
+                    <tr><td class="fr-abbr">IR</td><td>Impôt sur le revenu</td><td>الضريبة على الدخل</td></tr>
+                    <tr><td class="fr-abbr">IS</td><td>Impôt sur les sociétés</td><td>الضريبة على الشركات</td></tr>
+                    <tr><td class="fr-abbr">TVA</td><td>Taxe sur la valeur ajoutée</td><td>الضريبة على القيمة المضافة</td></tr>
+                    <tr><td class="fr-abbr">RTM</td><td>Régie des transports marocains (ancien SEGMA)</td><td>وكالة النقل المغربي (مرافق مستقلة سابقة)</td></tr>
+                    <tr><td class="fr-abbr">CT</td><td>Collectivités territoriales</td><td>الجماعات الترابية</td></tr>
+                    <tr><td class="fr-abbr">BGE</td><td>Budget général de l'État</td><td>الميزانية العامة للدولة</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="bilingual-block">
+            <div class="fr-text"><strong>Autres abréviations importantes :</strong> <br>
+            - <strong>LF</strong> : Loi de finances<br>
+            - <strong>LFR</strong> : Loi de finances rectificative<br>
+            - <strong>BO</strong> : Bulletin officiel<br>
+            - <strong>CRC</strong> : Cours régionales des comptes<br>
+            - <strong>NPM</strong> : New Public Management (voir ci-dessus)
+            </div>
+            <div class="ar-text"><i class="fas fa-language"></i> <strong>اختصارات إضافية مهمة:</strong><br>
+            - LF: قانون المالية<br>
+            - LFR: قانون مالية تصحيحي<br>
+            - BO: الجريدة الرسمية<br>
+            - CRC: الغرف الجهوية للحسابات<br>
+            - NPM: الإدارة العمومية الجديدة (توجه حديث في تدبير المالية العامة)
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-university"></i> Cours complet des finances publiques – Pr. Abdelaziz EL OUALI – Traduction intégrale en arabe – Tableau des abréviations – Préparation examen S4
+    </footer>
+</div>
+
+<script>
+    const btns = document.querySelectorAll('.tab-btn');
+    const panes = document.querySelectorAll('.tab-pane');
+
+    function activateTab(tabId) {
+        panes.forEach(pane => pane.classList.remove('active'));
+        btns.forEach(btn => btn.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        const activeBtn = Array.from(btns).find(btn => btn.dataset.tab === tabId);
+        if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.dataset.tab;
+            activateTab(tabId);
+        });
+    });
+</script>
+</body>
+</html>
