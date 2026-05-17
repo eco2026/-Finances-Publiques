@@ -3,517 +3,800 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finances Publiques - Cours complet détaillé (Français + Arabe) + Tableau des abréviations</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Finances Publiques - Cours Complet (Semestre 4)</title>
     <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0284c7;
+            --accent-color: #ea580c;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --sidebar-width: 320px;
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Inter', 'Cairo', sans-serif;
-            background: #eef2f7;
-            color: #1e293b;
-            line-height: 1.65;
-            padding: 1.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 1.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #0c4a6e, #0891b2);
+        /* Navigation Latérale */
+        nav {
+            width: var(--sidebar-width);
+            height: 100vh;
+            background-color: #0f172a;
             color: white;
-            padding: 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            padding: 2rem 1rem;
+        }
+
+        nav h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
             text-align: center;
+            color: #f1f5f9;
         }
 
-        .header h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-        }
-
-        .header h1 i {
-            margin-right: 1rem;
-            color: #facc15;
-        }
-
-        .uni {
+        .nav-chapter {
+            color: var(--accent-color);
             font-size: 0.95rem;
-            opacity: 0.9;
-            margin-top: 0.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-left: 0.5rem;
         }
 
-        .exam-badge {
-            background: #facc15;
-            color: #0c4a6e;
-            display: inline-block;
-            padding: 0.4rem 1.5rem;
-            border-radius: 40px;
-            font-weight: 800;
+        nav ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        nav ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
             font-size: 0.85rem;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            padding-left: 0.8rem;
+        }
+
+        /* Conteneur Principal */
+        main {
+            margin-left: var(--sidebar-width);
+            padding: 3rem;
+            max-width: 1100px;
+            width: calc(100% - var(--sidebar-width));
+        }
+
+        /* En-tête académique (Chapitre 1) */
+        .academic-header {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            border-left: 6px solid var(--secondary-color);
+        }
+
+        .academic-header h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .academic-header h2 {
+            color: var(--text-color);
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .academic-meta {
+            font-size: 0.95rem;
+            color: #64748b;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
             margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
         }
 
-        /* Navigation Tabs */
-        .tabs-nav {
-            display: flex;
-            background: #e2e8f0;
-            border-bottom: 3px solid #0c4a6e;
-            flex-wrap: wrap;
+        /* En-têtes de chapitres (Chapitres 2 et 3) */
+        .header-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            border-left: 6px solid var(--primary-color);
         }
 
-        .tab-btn {
-            flex: 1;
-            background: transparent;
-            border: none;
-            padding: 1.2rem 0.5rem;
-            font-size: 1rem;
-            font-weight: 700;
-            font-family: 'Cairo', 'Inter', sans-serif;
-            cursor: pointer;
-            transition: all 0.2s;
-            color: #1e293b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+        .header-box h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
         }
 
-        .tab-btn i {
+        .header-box p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        section {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+            scroll-margin-top: 2rem;
+        }
+
+        h2.section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+        }
+
+        h3.subsection-title {
+            color: var(--secondary-color);
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
             font-size: 1.3rem;
         }
 
-        .tab-btn:hover {
-            background: #cbd5e1;
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
         }
 
-        .tab-btn.active {
-            background: white;
-            color: #0c4a6e;
-            border-bottom: 3px solid #0c4a6e;
-            margin-bottom: -3px;
-        }
-
-        /* Content Panels */
-        .tab-pane {
-            display: none;
-            padding: 2rem;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .tab-pane.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-
-        /* Bilingual blocks */
-        .bilingual-block {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            margin-bottom: 1.8rem;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .fr-text {
-            padding: 1.2rem 1.5rem;
-            background: #f8fafc;
-            border-right: 5px solid #0c4a6e;
-            font-family: 'Inter', monospace;
-            font-size: 0.98rem;
-            line-height: 1.7;
-            color: #0f172a;
-        }
-
-        .ar-text {
-            padding: 1rem 1.5rem;
-            background: #fffbeb;
-            border-right: 5px solid #facc15;
-            font-family: 'Cairo', sans-serif;
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #78350f;
-            direction: rtl;
-        }
-
-        .ar-text i {
-            margin-left: 8px;
-            color: #d97706;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            color: #0c4a6e;
-            border-bottom: 4px solid #facc15;
-            display: inline-block;
-            padding-bottom: 0.3rem;
-            margin: 1rem 0 1.8rem 0;
-        }
-
-        h3 {
-            font-size: 1.4rem;
-            color: #1e3a5f;
-            margin: 1.2rem 0 0.8rem 0;
-            font-weight: 700;
-            background: #eef2ff;
-            display: inline-block;
-            padding: 0.2rem 1rem;
-            border-radius: 30px;
-        }
-
-        h4 {
-            font-size: 1.15rem;
-            color: #2d3748;
-            margin: 1rem 0 0.5rem 0;
-            font-weight: 600;
-            padding-right: 0.5rem;
-            border-right: 3px solid #facc15;
-        }
-
-        ul, .ul-principes {
-            margin: 0.8rem 0 0.8rem 1.5rem;
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.2rem;
         }
 
         li {
-            margin: 0.4rem 0;
+            margin-bottom: 0.6rem;
         }
 
-        .note-examen {
-            background: #dbeafe;
-            border-radius: 14px;
+        /* Boîtes de mise en évidence */
+        .highlight-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+        }
+
+        .law-box, .law-text {
+            background-color: #f8fafc;
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .alert-box {
+            background-color: #fff7ed;
+            border: 1px solid #ffedd5;
+            border-left: 4px solid var(--accent-color);
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        blockquote {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--primary-color);
             padding: 1rem;
             margin: 1.5rem 0;
-            text-align: center;
-            font-weight: 600;
-            color: #1e40af;
-            border: 1px dashed #2563eb;
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
         }
 
-        /* Tableau des abréviations */
-        .abbrev-table {
-            margin: 2rem 0 1rem;
-            overflow-x: auto;
-        }
-        .abbrev-table table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        .abbrev-table th {
-            background: #0c4a6e;
-            color: white;
+        .article-box {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
             padding: 1rem;
-            font-weight: 700;
-            text-align: center;
-            font-size: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
         }
-        .abbrev-table td {
+
+        .article-box strong {
+            color: var(--primary-color);
+        }
+
+        /* Glossaire */
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .glossary-item {
+            background-color: #f8fafc;
             border: 1px solid #e2e8f0;
-            padding: 0.8rem 1rem;
-            vertical-align: top;
-        }
-        .abbrev-table tr:nth-child(even) {
-            background: #f8fafc;
-        }
-        .abbrev-table .fr-abbr {
-            font-weight: 700;
-            color: #0c4a6e;
-            font-family: monospace;
-        }
-
-        footer {
-            background: #f1f5f9;
-            text-align: center;
+            border-left: 4px solid var(--accent-color);
             padding: 1.5rem;
-            font-size: 0.8rem;
-            color: #475569;
-            border-top: 1px solid #cbd5e1;
+            border-radius: 6px;
         }
 
-        @media (max-width: 768px) {
-            .tab-pane {
+        .glossary-item dt {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .glossary-item dd {
+            color: var(--text-color);
+            margin-left: 0;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 992px) {
+            body {
+                flex-direction: column;
+            }
+            nav {
+                width: 100%;
+                height: auto;
+                position: relative;
                 padding: 1rem;
             }
-            .fr-text, .ar-text {
-                padding: 0.8rem 1rem;
-            }
-            .tab-btn {
-                font-size: 0.7rem;
+            main {
+                margin-left: 0;
+                width: 100%;
+                padding: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1><i class="fas fa-landmark"></i> Finances Publiques</h1>
-        <div class="uni">Université Hassan 1<sup>er</sup> de Settat · Faculté d’économie et de gestion<br> Professeur Abdelaziz EL OUALI · Semestre 4 · Année 2020-2021</div>
-        <div class="exam-badge"><i class="fas fa-graduation-cap"></i> Préparation examen · Cours complet détaillé (français + arabe) + tableau des abréviations</div>
-    </div>
 
-    <div class="tabs-nav">
-        <button class="tab-btn active" data-tab="ch1"><i class="fas fa-book-open"></i> الفصل 1<br><span style="font-size:0.65rem;">Chapitre 1</span></button>
-        <button class="tab-btn" data-tab="ch2"><i class="fas fa-chart-pie"></i> الفصل 2<br><span style="font-size:0.65rem;">Chapitre 2</span></button>
-        <button class="tab-btn" data-tab="ch3"><i class="fas fa-city"></i> الفصل 3<br><span style="font-size:0.65rem;">Chapitre 3</span></button>
-        <button class="tab-btn" data-tab="abbrev"><i class="fas fa-list-ul"></i> اختصارات<br><span style="font-size:0.65rem;">Abréviations</span></button>
-    </div>
+    <nav>
+        <h3>Table des Matières</h3>
 
-    <!-- ==================== CHAPITRE 1 : CADRE GENERAL ==================== -->
-    <div id="ch1" class="tab-pane active">
-        <h2>📘 Chapitre 1 : Cadre général des finances publiques</h2>
-        <div class="note-examen"><i class="fas fa-star-of-life"></i> À mémoriser pour l'examen : définition, les 3 fonctions de Musgrave, les 3 périodes historiques, les principes budgétaires et les 4 approches.</div>
+        <div class="nav-chapter">Chapitre 1 : Introduction</div>
+        <ul>
+            <li><a href="#chap1-intro">Introduction Générale</a></li>
+            <li><a href="#chap1-sec1">Section 1 : Cadre historique</a></li>
+            <li><a href="#chap1-sec2">Section 2 : Cadre juridique</a></li>
+            <li><a href="#chap1-sec3">Section 3 : Cadre normatif</a></li>
+            <li><a href="#chap1-sec4">Section 4 : Les approches</a></li>
+        </ul>
 
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Introduction :</strong> Les finances publiques étudient l'ensemble des techniques, des opérations et des règles régissant les recettes, les dépenses, l'exécution et le contrôle de ces recettes et ces dépenses publiques. Elles englobent: les finances de l'État; les finances des collectivités territoriales et établissements publics; les finances des personnes de droit privé soumises au contrôle des juridictions financières (syndicats, partis politiques); les finances des groupements régionaux (UE, UA).</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>الترجمة: مقدمة</strong><br> تدرس المالية العامة مجموعة التقنيات والعمليات والقواعد التي تنظم الإيرادات والنفقات وتنفيذها ومراقبتها. تشمل: مالية الدولة، مالية الجماعات الترابية والمؤسسات العمومية، مالية الأشخاص الخاضعين للقانون الخاص الخاضعين لرقابة المحاكم المالية (النقابات، الأحزاب السياسية)، ومالية التجمعات الجهوية (الاتحاد الأوروبي، الاتحاد الإفريقي).</div>
-        </div>
+        <div class="nav-chapter">Chapitre 2 : L'État</div>
+        <ul>
+            <li><a href="#chap2-intro">Introduction</a></li>
+            <li><a href="#chap2-sec1">Section 1 : Notions de LF et de Budget</a></li>
+            <li><a href="#chap2-sec2">Section 2 : Contenu et structure des LF</a></li>
+            <li><a href="#chap2-sec3">Section 3 : Le cycle budgétaire</a></li>
+        </ul>
 
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Richard Abel Musgrave (1910-2007)</strong> dans sa théorie des finances publiques avance trois fonctions : <br> - La fonction d'allocation : satisfaction des besoins publics (éducation, sécurité, santé) à partir des biens publics.<br> - La fonction de stabilisation (keynésienne) : augmentation des dépenses publiques pour soutenir revenu national et emploi.<br> - La fonction de redistribution : transferts entre individus ou groupes sociaux par les impôts et dépenses publiques.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>الترجمة: ريتشارد آبل موسغريف</strong> يقدم ثلاث وظائف للمالية العامة:<br> • وظيفة التخصيص: إشباع الحاجات العامة عبر السلع العامة.<br> • وظيفة الاستقرار (الكينزية): زيادة الإنفاق العام لدعم الدخل القومي والتشغيل.<br> • وظيفة إعادة التوزيع: تحويلات بين الأفراد أو الفئات الاجتماعية عبر الضرائب والنفقات العامة.</div>
-        </div>
+        <div class="nav-chapter">Chapitre 3 : Les Collectivités</div>
+        <ul>
+            <li><a href="#chap3-intro">Introduction</a></li>
+            <li><a href="#chap3-sec1">Section 1 : Spécificités des finances des CT</a></li>
+            <li><a href="#chap3-sec2">Section 2 : Contenu et structure du budget</a></li>
+            <li><a href="#chap3-sec3">Section 3 : Le cycle budgétaire des CT</a></li>
+        </ul>
 
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Différence finances publiques / finances privées :</strong> Les FP concernent les organismes publics (intérêt général, droit public) ; les finances privées concernent les entreprises privées (profit, droit privé). Techniques de gestion différentes.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>الفرق بين المالية العامة والمالية الخاصة:</strong> المالية العامة تخص الهيئات العمومية (مصلحة عامة، قانون عام)؛ المالية الخاصة تخص المؤسسات الخاصة (الربح، القانون الخاص). تقنيات التسيير مختلفة.</div>
-        </div>
+        <div class="nav-chapter">Annexes</div>
+        <ul>
+            <li><a href="#glossaire">Glossaire des Abréviations</a></li>
+        </ul>
+    </nav>
 
-        <h3>Section 1 : Cadre historique</h3>
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>1- Finances classiques (État gendarme) :</strong> budget limité, équilibré, financé par impôts. Apparition des principes d'annualité, universalité, spécialité.<br>
-            <strong>2- Finances modernes (après 1929, Keynes) :</strong> accroissement dépenses publiques, déficit budgétaire, recours à l'emprunt.<br>
-            <strong>3- Finances contemporaines (années 80) :</strong> retour au libéralisme, désengagement de l'État, programmes d'ajustement structurel (FMI/Banque mondiale), nouveaux principes : sincérité, transparence, équilibre.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>التطور التاريخي:</strong><br> 
-            • الكلاسيكية (دولة الدرك): ميزانية محدودة ومتوازنة، تمويل عبر الضرائب، مبادئ السنوية والشمولية والتخصص.<br>
-            • الحديثة (بعد 1929، كينز): زيادة النفقات العامة، عجز الميزانية، اللجوء إلى القروض.<br>
-            • المعاصرة (الثمانينيات): العودة إلى الليبرالية، انسحاب الدولة، برامج التكيف الهيكلي، مبادئ جديدة (الصدق، الشفافية، التوازن).</div>
-        </div>
-
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Évolution des finances publiques au Maroc :</strong><br>
-            <strong>Avant indépendance :</strong> Corps des Oumanas (Moulay Slimane), trois trésors (Bit el mal, dar adyel, trésor du Sultan). Premier budget 1910 (Chaouia). Dahir du 9 juin 1917 organisant la comptabilité publique.<br>
-            <strong>Après indépendance – fin 70 :</strong> Dahir 1958, Constitution 1962, loi organique 1963, puis 1970/1972. État d'exception 1965 → suspension du parlement.<br>
-            <strong>Années 80 à aujourd'hui :</strong> Crise économique, PAS, réforme LOLF 1998, puis nouvelle LOLF n°130.13 (2015) suite Constitution 2011. Modernisation : globalisation des crédits, déconcentration, performance, genre.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>تطور المالية العامة في المغرب:</strong><br>
-            • قبل الاستقلال: نظام العُمانيين، ثلاثة خزائن، أول ميزانية 1910، ظهير 1917.<br>
-            • بعد الاستقلال - نهاية السبعينيات: ظهير 1958، دستور 1962، قانون تنظيمي 1963، حالة الاستثناء 1965.<br>
-            • من الثمانينيات إلى اليوم: أزمة اقتصادية، برامج التكيف الهيكلي، إصلاح القانون التنظيمي 1998، ثم القانون التنظيمي 130.13 لسنة 2015.</div>
-        </div>
-
-        <h3>Section 2 : Cadre juridique au Maroc</h3>
-        <div class="bilingual-block">
-            <div class="fr-text">Textes principaux : Constitution 2011, LOLF n°130.13, Décret Royal 330-66 (comptabilité publique), Code des juridictions financières 62-99, décret 2-15-426, décret contrôle des dépenses, jurisprudence financière.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>النصوص الأساسية:</strong> دستور 2011، القانون التنظيمي لقانون المالية 130.13، الظهير الملكي 330-66 (المحاسبة العمومية)، مدونة المحاكم المالية 62-99، مرسوم مراقبة النفقات، الاجتهاد القضائي المالي.</div>
-        </div>
-
-        <h3>Section 3 : Cadre normatif (Principes)</h3>
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>1. Annualité :</strong> crédits valables un an (art.3 LOLF). Dérogations : autorisations pluriannuelles (art.75 Constitution), report de 30% des crédits d'investissement.<br>
-            <strong>2. Unité :</strong> un seul document. Dérogations : SEGMA, comptes spéciaux.<br>
-            <strong>3. Universalité :</strong> non-compensation (recettes brutes) et non-affectation (art.8 LOLF). Exceptions : SEGMA, CST, fonds de concours.<br>
-            <strong>4. Spécialité :</strong> vote détaillé des crédits (atténué par budget programme).<br>
-            <strong>5. Équilibre :</strong> recettes = dépenses (objectif, moins contraignant pour l'État).<br>
-            <strong>6. Sincérité :</strong> information honnête (art.10 et 31 LOLF). La Cour des comptes certifie.<br>
-            <strong>7. Séparation ordonnateurs/comptables :</strong> incompatibilité (art.4 décret CP).<br>
-            <strong>8. Égalité fiscale :</strong> art.39 et 40 Constitution (égalité devant l'impôt et les charges publiques).</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>المبادئ:</strong><br>
-            1. السنوية: اعتمادات سنة واحدة (مع استثناءات).<br>2. الوحدة: وثيقة واحدة.<br>3. الشمولية: عدم المقاصة وعدم التخصيص.<br>4. التخصص: التصويت التفصيلي.<br>5. التوازن: إيرادات = نفقات.<br>6. الصدق: معلومات صادقة (المادة 10 و31). محكمة المحاسبات تصادق.<br>7. الفصل بين الآمرين بالصرف والمحاسبين.<br>8. المساواة الجبائية (الفصل 39 و40 من الدستور).</div>
-        </div>
-
-        <h3>Section 4 : Approches des finances publiques</h3>
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Approche juridique :</strong> étude des règles (préparation, vote, exécution, contrôle).<br>
-            <strong>Approche économique :</strong> effets sur l'économie (allocation, redistribution, emploi).<br>
-            <strong>Approche managériale (NPM) :</strong> performance, transparence, évaluation, audit.<br>
-            <strong>Approche sociologique :</strong> rapports entre finances publiques et société (démocratie fiscale, comportement électoral).</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>المقاربات الأربع:</strong> قانونية (دراسة القواعد)، اقتصادية (الآثار الاقتصادية)، تسييرية (الأداء والشفافية)، سوسيولوجية (العلاقة مع المجتمع والديمقراطية المالية).</div>
-        </div>
-    </div>
-
-    <!-- ==================== CHAPITRE 2 : LOI DE FINANCES ==================== -->
-    <div id="ch2" class="tab-pane">
-        <h2>💰 Chapitre 2 : Les finances de l’État – Loi de finances et cycle budgétaire</h2>
-        <div class="note-examen"><i class="fas fa-star-of-life"></i> À maîtriser : définition loi de finances, types (initiale, rectificative, règlement), structure (budget général, SEGMA, CST), et les 4 phases du cycle budgétaire.</div>
-
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Section 1 : Notions</strong><br> La loi de finances (art.1 LOLF) détermine ressources et charges de l'État et l'équilibre budgétaire. Le budget est la partie chiffrée de la loi de finances.<br>
-            <strong>Types :</strong> Loi de finances de l'année (initiale), Loi de finances rectificative (modifications en cours d'année), Loi de règlement (constate le résultat définitif, art.76 Constitution).</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>مفاهيم أساسية:</strong> قانون المالية يحدد موارد الدولة ونفقاتها وتوازنها الميزانياتي. الميزانية هي الجزء الرقمي. الأنواع: قانون مالية السنة (الأولي)، قانون مالية تصحيحي، قانون تسوية (يحدد النتيجة النهائية، الفصل 76 من الدستور).</div>
-        </div>
-
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Structure de la loi de finances :</strong> Deux parties : 1ère partie (équilibre général, autorisations, plafonds) ; 2ème partie (dépenses par chapitre, SEGMA, CST).<br>
-            <strong>Ressources :</strong> fiscales (IR, IS, TVA, douane), non fiscales (domaine, amendes), emprunts.<br>
-            <strong>Charges :</strong> dépenses du budget général (fonctionnement, investissement, dette) + SEGMA + CST.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>هيكل قانون المالية:</strong> جزآن: الأول (التوازن العام والتفويضات)، الثاني (النفقات حسب الفصول). الموارد: جبائية (الضريبة على الدخل، الشركات، القيمة المضافة، الجمارك)، غير جبائية، قروض. النفقات: الميزانية العامة (تسيير، تجهيز، دين) + ميزانيات المرافق المستقلة + حسابات الخزينة الخاصة.</div>
-        </div>
-
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Budget général :</strong> fonctionnement (personnel, intervention), investissement (routes, hôpitaux), dette (intérêts et amortissement).<br>
-            <strong>SEGMA :</strong> services sans personnalité morale, ressources propres (ex: centres hospitaliers, centres régionaux d'investissement).<br>
-            <strong>Comptes spéciaux du Trésor :</strong> 5 catégories : affectation spéciale, adhésion aux organismes internationaux, financement, opérations monétaires, dépenses sur dotation.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>مكونات ميزانية الدولة:</strong> الميزانية العامة (تسيير، تجهيز، دين). المرافق المستقلة (SEGMA): خدمات بدون شخصية معنوية، موارد ذاتية. حسابات الخزينة الخاصة: 5 فئات (تخصيص خاص، الانضمام للمنظمات الدولية، التمويل، العمليات النقدية، نفقات على اعتمادات).</div>
-        </div>
-
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Nouvelle nomenclature budgétaire (LOLF 130.13) :</strong> présentation par programmes, régions, actions (budget programme axé sur la performance). Annexes : rapport économique, dépenses fiscales, dette, compensation, rapport genre, etc.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>التسمية الميزانياتية الجديدة:</strong> عرض حسب البرامج والجهات والإجراءات (ميزانية البرامج الموجهة بالأداء). المرفقات: تقرير اقتصادي، النفقات الضريبية، الدين، التعويضات، تقرير النوع الاجتماعي.</div>
-        </div>
-
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Section 3 : Le cycle budgétaire</strong><br> Règle des quatre temps alternés : préparation (exécutif) → vote (législatif) → exécution (exécutif) → contrôle (législatif). Nouveauté LOLF : association du Parlement dès la préparation (débat avant 31 juillet).<br>
-            <strong>Calendrier :</strong> 20 octobre dépôt PLF, 30 jours Chambre des représentants, 22 jours Chambre des conseillers, vote final.<br>
-            <strong>Exécution :</strong> ordonnateurs et comptables (séparation des fonctions).<br>
-            <strong>Contrôle :</strong> interne (IGF, CED) et externe (Cour des comptes, Parlement).</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>الدورة الميزانياتية:</strong> قاعدة الأزمنة الأربعة: إعداد (تنفيذي) → تصويت (تشريعي) → تنفيذ (تنفيذي) → مراقبة (تشريعي). الجديد: إشراك البرلمان منذ مرحلة الإعداد (مناقشة قبل 31 يوليو). التقويم: 20 أكتوبر إيداع المشروع، 30 يوماً لمجلس النواب، 22 يوماً لمجلس المستشارين، تصويت نهائي. التنفيذ بواسطة الآمرين بالصرف والمحاسبين. المراقبة الداخلية والخارجية (محكمة المحاسبات).</div>
-        </div>
-    </div>
-
-    <!-- ==================== CHAPITRE 3 : COLLECTIVITÉS TERRITORIALES ==================== -->
-    <div id="ch3" class="tab-pane">
-        <h2>🏛️ Chapitre 3 : Les finances des collectivités territoriales</h2>
-        <div class="note-examen"><i class="fas fa-star-of-life"></i> À retenir : spécificités (équilibre contraignant, dépenses obligatoires, tutelle), structure du budget (fonctionnement/équipement), et le cycle budgétaire spécifique.</div>
-
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Cadre juridique :</strong> Lois organiques n°113-14 (communes), n°111-14 (régions), loi n°112-14 (préfectures/provinces), loi 47-06 fiscalité CT, décret comptabilité publique des CT, code des juridictions financières.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>الإطار القانوني:</strong> قوانين تنظيمية رقم 113-14 (الجماعات)، 111-14 (الجهات)، قانون رقم 112-14 (العمالات والأقاليم)، قانون 47-06 الخاص بالجباية المحلية، مرسوم المحاسبة العمومية للجماعات، مدونة المحاكم المالية.</div>
-        </div>
-
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Spécificités :</strong><br>
-            - Mêmes principes budgétaires MAIS équilibre <strong>contraignant</strong> (fonctionnement et équipement).<br>
-            - Pouvoir fiscal limité (impôts locaux : patente, taxe d'édilité, taxe urbaine).<br>
-            - Dépenses obligatoires : traitements, eau/électricité, dettes, jugements, dotations.<br>
-            - Contrôle de tutelle : visa du gouverneur ou ministre avant exécution.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>الخصوصيات:</strong><br>
-            - نفس المبادئ الميزانياتية ولكن التوازن <strong>إلزامي</strong> (التسيير والتجهيز).<br>
-            - سلطة جبائية محدودة (الضريبة المهنية، ضريبة التجهيز، الضريبة الحضرية).<br>
-            - نفقات إجبارية: الأجور، الماء/الكهرباء، الديون، الأحكام القضائية.<br>
-            - رقابة الوصاية: مصادقة الوالي أو الوزير قبل التنفيذ.</div>
-        </div>
-
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Structure du budget des CT :</strong> Deux parties (fonctionnement et équipement) + budgets annexes + comptes spéciaux.<br>
-            <strong>Ressources :</strong> impôts locaux, parts d'impôts nationaux, redevances, emprunts, subventions, dons.<br>
-            <strong>Charges :</strong> dépenses de personnel, équipement, dettes, contributions aux groupements.<br>
-            Documents annexes : programmation triennale, projet de performance, état des engagements, annuités dettes, états recettes/dépenses antérieures.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>هيكل ميزانية الجماعات:</strong> جزآن (تسيير وتجهيز) + ميزانيات ملحقة + حسابات خاصة. الموارد: ضرائب محلية، حصص ضرائب وطنية، رسوم، قروض، دعم. النفقات: تكاليف الموظفين، تجهيز، ديون. الوثائق الملحقة: برمجة ثلاثية، مشروع الأداء، حالة الالتزامات، جدول أقساط الديون.</div>
-        </div>
-
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Cycle budgétaire des CT :</strong><br>
-            - Élaboration par le président du conseil (sur programmation triennale glissante).<br>
-            - Adoption par l'assemblée délibérante (session du conseil).<br>
-            - Visa de la tutelle (vérification: respect des lois, équilibre sincère, dépenses obligatoires).<br>
-            - Exécution : ordonnateur (président) et comptable (trésorier).<br>
-            - Contrôle : tutelle, IGF, inspection générale de l'administration territoriale, cours régionales des comptes.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>الدورة الميزانياتية للجماعات الترابية:</strong><br>
-            - الإعداد: رئيس المجلس (برمجة ثلاثية متجددة).<br>
-            - التصويت: المجلس المنتخب.<br>
-            - مصادقة الوصاية (مراقبة احترام القوانين، التوازن الصادق، النفقات الإجبارية).<br>
-            - التنفيذ: آمر الصرف (الرئيس) والمحاسب (الخزين).<br>
-            - المراقبة: الوصاية، المفتشية العامة للمالية، المفتشية العامة للإدارة الترابية، الغرف الجهوية للحسابات.</div>
-        </div>
-
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Différence majeure avec l'État :</strong> L'équilibre budgétaire est impératif pour les CT. L'excédent de fonctionnement est automatiquement affecté à la section d'équipement. La tutelle peut saisir le juge financier en cas de déséquilibre grave.</div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>الفرق الكبير مع الدولة:</strong> التوازن الميزانياتي إلزامي بالنسبة للجماعات الترابية. فائض التسيير يُخصص تلقائياً للتجهيز. يمكن للوصاية إحالة الأمر على القاضي المالي في حالة اختلال خطير.</div>
-        </div>
-    </div>
-
-    <!-- ==================== TABLEAU DES ABRÉVIATIONS ==================== -->
-    <div id="abbrev" class="tab-pane">
-        <h2><i class="fas fa-list-ul"></i> Tableau des abréviations / acronymes</h2>
-        <div class="note-examen"><i class="fas fa-star-of-life"></i> À connaître par cœur pour l'examen : ces abréviations sont fréquemment utilisées dans les copies et les questions de cours.</div>
-
-        <div class="abbrev-table">
-            <table>
-                <thead>
-                    <tr><th>Abréviation</th><th>Signification en français</th><th>الترجمة بالعربية</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td class="fr-abbr">NPM</td><td>New Public Management (nouvelle gestion publique)</td><td>الإدارة العمومية الجديدة (تسيير حديث قائم على الأداء)</td></tr>
-                    <tr><td class="fr-abbr">LOLF</td><td>Loi organique relative à la loi de finances</td><td>القانون التنظيمي المتعلق بقانون المالية</td></tr>
-                    <tr><td class="fr-abbr">SEGMA</td><td>Services de l'État gérés de manière autonome</td><td>مرافق الدولة المسيرة بطريقة مستقلة</td></tr>
-                    <tr><td class="fr-abbr">CST</td><td>Comptes spéciaux du Trésor</td><td>الحسابات الخاصة للخزينة</td></tr>
-                    <tr><td class="fr-abbr">PLF</td><td>Projet de loi de finances</td><td>مشروع قانون المالية</td></tr>
-                    <tr><td class="fr-abbr">IGF</td><td>Inspection générale des finances</td><td>التفتيش العام للمالية</td></tr>
-                    <tr><td class="fr-abbr">IGAT</td><td>Inspection générale de l'administration territoriale</td><td>التفتيش العام للإدارة الترابية</td></tr>
-                    <tr><td class="fr-abbr">IGM</td><td>Inspection générale des ministères</td><td>التفتيش العام للوزارات</td></tr>
-                    <tr><td class="fr-abbr">CED</td><td>Contrôle des engagements des dépenses</td><td>مراقبة الالتزام بالنفقات</td></tr>
-                    <tr><td class="fr-abbr">PAS</td><td>Programme d'ajustement structurel</td><td>برنامج التكيف الهيكلي</td></tr>
-                    <tr><td class="fr-abbr">FMI</td><td>Fonds monétaire international</td><td>صندوق النقد الدولي</td></tr>
-                    <tr><td class="fr-abbr">UE</td><td>Union européenne</td><td>الاتحاد الأوروبي</td></tr>
-                    <tr><td class="fr-abbr">UA</td><td>Union africaine</td><td>الاتحاد الإفريقي</td></tr>
-                    <tr><td class="fr-abbr">IR</td><td>Impôt sur le revenu</td><td>الضريبة على الدخل</td></tr>
-                    <tr><td class="fr-abbr">IS</td><td>Impôt sur les sociétés</td><td>الضريبة على الشركات</td></tr>
-                    <tr><td class="fr-abbr">TVA</td><td>Taxe sur la valeur ajoutée</td><td>الضريبة على القيمة المضافة</td></tr>
-                    <tr><td class="fr-abbr">RTM</td><td>Régie des transports marocains (ancien SEGMA)</td><td>وكالة النقل المغربي (مرافق مستقلة سابقة)</td></tr>
-                    <tr><td class="fr-abbr">CT</td><td>Collectivités territoriales</td><td>الجماعات الترابية</td></tr>
-                    <tr><td class="fr-abbr">BGE</td><td>Budget général de l'État</td><td>الميزانية العامة للدولة</td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="bilingual-block">
-            <div class="fr-text"><strong>Autres abréviations importantes :</strong> <br>
-            - <strong>LF</strong> : Loi de finances<br>
-            - <strong>LFR</strong> : Loi de finances rectificative<br>
-            - <strong>BO</strong> : Bulletin officiel<br>
-            - <strong>CRC</strong> : Cours régionales des comptes<br>
-            - <strong>NPM</strong> : New Public Management (voir ci-dessus)
+    <main>
+        <header class="academic-header">
+            <h1>Université Hassan 1er de Settat</h1>
+            <h2>Faculté d'économie et de gestion</h2>
+            <div class="academic-meta">
+                <div><strong>Module :</strong> Finances publiques</div>
+                <div><strong>Semestre :</strong> 4</div>
+                <div><strong>Professeur :</strong> Abdelaziz EL OUALI</div>
+                <div><strong>Année universitaire :</strong> 2020 - 2021</div>
             </div>
-            <div class="ar-text"><i class="fas fa-language"></i> <strong>اختصارات إضافية مهمة:</strong><br>
-            - LF: قانون المالية<br>
-            - LFR: قانون مالية تصحيحي<br>
-            - BO: الجريدة الرسمية<br>
-            - CRC: الغرف الجهوية للحسابات<br>
-            - NPM: الإدارة العمومية الجديدة (توجه حديث في تدبير المالية العامة)
+        </header>
+
+        <section id="chap1-intro">
+            <h2 class="section-title">Introduction</h2>
+            <p>Les finances publiques étudient l'ensemble des techniques, des opérations et des règles régissant les recettes, les dépenses, l'exécution et le contrôle de ces recettes et ces dépenses publiques.</p>
+            <p>Ellens englobent :</p>
+            <ul>
+                <li>Les finances de l'État ;</li>
+                <li>Les finances des collectivités territoriales et établissements publics ;</li>
+                <li>Les finances des personnes de droit privé soumises au contrôle des juridictions financières (syndicats, parties politiques) ;</li>
+                <li>Les finances des groupements régionaux (U.E, U.A).</li>
+            </ul>
+            <p>Les finances publiques sont étroitement liées à l'État. On ne peut imaginer un État sans finances publiques. Ainsi, depuis l'existence des pouvoirs publics, les finances publiques sont au cœur des débats théoriques et pratiques. C'est toute la question de la place du budget de l'État dans la société en général, et l'économie en particulier.</p>
+            
+            <h3 class="subsection-title">Les trois fonctions de Richard Abel Musgrave (1910-2007)</h3>
+            <p>Dans son ouvrage sur la théorie des finances publiques, cet économiste américain d'origine allemande en avance trois fonctions :</p>
+            <ul>
+                <li><strong>La fonction d'allocation :</strong> permet la satisfaction des besoins publics tels ceux de l'éducation, de la culture, de la sécurité, de la santé à partir des biens dits « publics » : biens qui ne peuvent ou ne doivent être fournis par le marché, ni au prix du marché ;</li>
+                <li><strong>La fonction de stabilisation :</strong> issue de la théorie keynésienne, recommande une augmentation de la dépense publique pour suppléer l'investissement privé de manière à soutenir, voire augmenter le revenu national, et par voie de conséquence, l'emploi ;</li>
+                <li><strong>La fonction de redistribution :</strong> en lien avec la fonction d'allocation, résulte des transferts entre individus ou groupes sociaux. Ces transferts sont effectués non seulement par les revenus mais aussi par les dépenses publiques.</li>
+            </ul>
+
+            <h3 class="subsection-title">Distinction entre finances publiques et finances privées</h3>
+            <ul>
+                <li>Les finances publiques concernent les organismes publics (l'État, les collectivités locales...), qui visent <strong>l'intérêt général</strong>, tandis que les finances privées concernent les organisations privées (entreprises, sociétés...), qui visent <strong>l'intérêt particulier (le profit)</strong> ;</li>
+                <li>Sur le plan juridique, les finances publiques relèvent du <strong>droit public</strong>, alors que les finances privées sont encadrées par le <strong>droit privé</strong> ;</li>
+                <li>Les techniques de gestion sont différentes pour les deux domaines.</li>
+            </ul>
+        </section>
+
+        <section id="chap1-sec1">
+            <h2 class="section-title">Section 1 : Cadre historique des finances publiques</h2>
+            <p>Les finances publiques ont évolué avec l'évolution de la société et des sciences économiques et politiques. Généralement, les auteurs distinguent trois grandes périodes :</p>
+            
+            <h3 class="subsection-title">1. Les finances publiques classiques</h3>
+            <p>Elles correspondent à une époque de conception libérale de l'intervention de l'État (l'État gendarme). L'État ne doit pas intervenir dans la vie économique, qui doit être laissée au marché et au secteur privé. Il ne doit assurer que les fonctions régaliennes (la défense nationale, la sécurité, la diplomatie, la justice) et certains investissements d'infrastructure (les routes, les barrages).</p>
+            <p>Le système était caractérisé par :</p>
+            <ul>
+                <li>Un budget limité juste pour couvrir les dépenses des fonctions régaliennes ;</li>
+                <li>Un budget équilibré : il n'y a ni déficit, ni excédent ;</li>
+                <li>Le budget est financé par les impôts et taxes ;</li>
+                <li>L'apparition des principes budgétaires classiques (annualité, universalité, spécialité).</li>
+            </ul>
+
+            <h3 class="subsection-title">2. Les finances publiques modernes</h3>
+            <p>Nées dans un contexte caractérisé par les guerres mondiales et la crise économique de 1929, on assiste à un abandon de la pensée classique au profit de la pensée keynésienne. Pour Keynes, le redressement ne peut s'établir automatiquement par le jeu du marché, mais nécessite l'intervention des pouvoirs publics par une politique de relance économique où le budget joue un rôle essentiel.</p>
+            <p>Elles se distinguent par :</p>
+            <ul>
+                <li>L'accroissement des dépenses publiques (politiques économiques et sociales) ;</li>
+                <li>Le déficit budgétaire issu du déséquilibre entre les ressources et les dépenses ;</li>
+                <li>Le recours à l'emprunt pour financer ce déficit ;</li>
+                <li>L'adoption de lois organiques des finances affirmant les principes budgétaires classiques.</li>
+            </ul>
+
+            <h3 class="subsection-title">3. Les finances publiques contemporaines</h3>
+            <p>Débutant dans les années 80 (après la crise de 1973), cette époque correspond à l'État stratège, marquée par le retour au libéralisme et le désengagement de l'État. Elle se caractérise par :</p>
+            <ul>
+                <li>L'application des programmes d'ajustement structurel (recommandés par la Banque Mondiale et le FMI) dans les pays sous-développés ;</li>
+                <li>Le développement des finances supranationales (U.E.) et infranationales (collectivités locales) ;</li>
+                <li>L'introduction de nouvelles techniques de gestion empruntées au secteur privé ;</li>
+                <li>La consécration de nouveaux principes budgétaires (sincérité, transparence, équilibre).</li>
+            </ul>
+
+            <h3 class="subsection-title">4. L'évolution des finances publiques au Maroc</h3>
+            <p>On distingue trois grandes étapes :</p>
+            <ul>
+                <li><strong>Avant l'indépendance :</strong> Sous le règne de Moulay Slimane (1792-1822), constitution du corps des Oumanas (Amin El Oumanas, Amin des rentrées, Amin des sorties, Amin des comptes). Coexistence de trois entités : <em>Bit el mal el mouslimine</em> (zakat, achour), le <em>trésor du dar adyel</em> (melks) et le <em>trésor du Sultan</em> (dons). Le premier budget d'ensemble est établi en 1910 (région de Chaouia) avant d'être étendu en 1912-1913. En juillet 1912, la Direction Générale des Finances est créée. Le dahir du 9 juin 1917 constitue le premier texte moderne organisant la comptabilité publique.</li>
+                <li><strong>Après l'indépendance (jusqu'à la fin des années 70) :</strong> Promulgation du dahir du 6 août 1958 sur la comptabilité publique. Avant la constitution de 1962, le budget était approuvé en Conseil des ministres. La constitution de 1962 consacre le principe de l'autorisation parlementaire. Création de la LOF de 1963 et du décret Royal n° 330-66 de 1967. L'état d'exception de 1965 suspend le parlement, suivi des réformes constitutionnelles et des LOF de 1970 et 1972 adoptées sans parlement.</li>
+                <li><strong>Depuis le début des années 80 à ce jour :</strong> Période de crise financière au début des années 80 menant au programme d'ajustement structurel (austérité, privatisation, réforme fiscale). Réforme de la loi organique en 1998 (amendée en 2000) adaptant le calendrier au bicaméralisme et supprimant certains budgets annexes. Au 21ème siècle, introduction de la globalisation des crédits, de la programmation pluriannuelle, et de l'approche genre. Adoption finale de la <strong>LOLF n° 130.13 de 2015</strong> suite à la constitution de 2011, introduisant la logique de performance et la transparence.</li>
+            </ul>
+        </section>
+
+        <section id="chap1-sec2">
+            <h2 class="section-title">Section 2 : Le cadre juridique des finances publiques au Maroc</h2>
+            <p>Plusieurs textes majeurs réglementent les finances publiques marocaines :</p>
+            <ul>
+                <li>La constitution de 2011 ;</li>
+                <li>La LOLF n° 130.13 de 2015 ;</li>
+                <li>Le Décret Royal n° 330-66 (26 avril 1967) portant règlement général de comptabilité publique ;</li>
+                <li>La Loi n° 62-99 formant code des juridictions financières ;</li>
+                <li>Le Décret n° 2-15-426 (15 juillet 2015) relatif à l'élaboration et à l'exécution des lois de finances ;</li>
+                <li>Le Décret n° 2-07-1235 (4 novembre 2008) relatif au contrôle des dépenses de l'État ;</li>
+                <li>La Loi n° 61-99 relative à la responsabilité des ordonnateurs, des contrôleurs et des comptables publics ;</li>
+                <li>Les règlements et la jurisprudence financière.</li>
+            </ul>
+
+            <h3 class="subsection-title">Les principales dispositions de la Constitution de 2011</h3>
+            <div class="article-box">
+                <strong>Article 39 & 40 :</strong> Consacrent la justice fiscale, l'égalité devant l'impôt et la solidarité face aux charges publiques ou calamités naturelles selon les facultés contributives de chacun.
             </div>
-        </div>
-    </div>
+            <div class="article-box">
+                <strong>Article 49 :</strong> Le Conseil des ministres délibère sur les orientations générales du projet de loi de finances.
+            </div>
+            <div class="article-box">
+                <strong>Article 70 & 75 :</strong> Le Parlement vote la loi de finances (déposée par priorité devant la Chambre des Représentants). En cas de non-vote à la fin de l'année, le gouvernement ouvre par décret les crédits nécessaires à la marche des services publics.
+            </div>
+            <div class="article-box">
+                <strong>Article 76 :</strong> Le gouvernement soumet annuellement une loi de règlement au cours du deuxième exercice qui suit l'exécution de la loi de finances.
+            </div>
+            <div class="article-box">
+                <strong>Article 77 :</strong> Le Parlement et le gouvernement veillent à la préservation de l'équilibre des finances de l'État (recevabilité financière des amendements).
+            </div>
+            <div class="article-box">
+                <strong>Article 147 & 148 :</strong> La Cour des Comptes est l'institution supérieure de contrôle. Elle assure le contrôle supérieur de l'exécution des lois de finances et assiste le Parlement.
+            </div>
 
-    <footer>
-        <i class="fas fa-university"></i> Cours complet des finances publiques – Pr. Abdelaziz EL OUALI – Traduction intégrale en arabe – Tableau des abréviations – Préparation examen S4
-    </footer>
-</div>
+            <h3 class="subsection-title">La Loi Organique relative à la Loi de Finances (LOLF n° 130.13)</h3>
+            <p>Considérée comme la « constitution financière », le Maroc a connu plusieurs LOF (1963, 1970, 1972, 1998, 2015). Les objectifs de la réforme de 2015 sont :</p>
+            <ul>
+                <li>Introduire l'approche performance (budget-programme, indicateurs, audit de performance par l'IGF) ;</li>
+                <li>Renforcer le rôle du Parlement en matière de contrôle et d'évaluation ;</li>
+                <li>Renforcer la transparence budgétaire et comptable.</li>
+            </ul>
+        </section>
 
-<script>
-    const btns = document.querySelectorAll('.tab-btn');
-    const panes = document.querySelectorAll('.tab-pane');
+        <section id="chap1-sec3">
+            <h2 class="section-title">Section 3 : Le cadre normatif des finances publiques</h2>
+            <p>Le cadre normatif s'articule autour de grands principes budgétaires, comptables et fiscaux :</p>
+            
+            <h3 class="subsection-title">1. Le principe de l'annualité budgétaire</h3>
+            <p>Les autorisations de recettes et de dépenses ont une validité d'un an. Les crédits ouverts non utilisés sont annulés en fin d'exercice. 
+            <br><em>Dérogations :</em> Les dépenses d'investissement des programmes pluriannuels votées une seule fois et le report de crédits de paiement d'investissement dans la limite de 30% (Article 63 de la LOLF).</p>
 
-    function activateTab(tabId) {
-        panes.forEach(pane => pane.classList.remove('active'));
-        btns.forEach(btn => btn.classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
-        const activeBtn = Array.from(btns).find(btn => btn.dataset.tab === tabId);
-        if (activeBtn) activeBtn.classList.add('active');
-    }
+            <h3 class="subsection-title">2. Le principe de l'unité</h3>
+            <p>Toutes les prévisions de recettes et de dépenses doivent être rassemblées dans un document unique.
+            <br><em>Dérogations :</em> Les services de l'État gérés de manière autonome (SEGMA), les comptes spéciaux du trésor (CST), et les opérations hors budget des établissements et entreprises publiques.</p>
 
-    btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const tabId = btn.dataset.tab;
-            activateTab(tabId);
-        });
-    });
-</script>
+            <h3 class="subsection-title">3. Le principe de l'universalité</h3>
+            <p>Il se décline en deux règles majeures :</p>
+            <ul>
+                <li><strong>Règle de non-compensation :</strong> Inscription du montant intégral des charges et des recettes séparément (sans contraction entre elles - Article 8 de la LOLF).</li>
+                <li><strong>Règle de non-affectation :</strong> L'ensemble des recettes couvre l'ensemble des dépenses, aucune recette précise ne peut être affectée à une dépense précise.</li>
+            </ul>
+            <p><em>Assouplissements :</em> Les budgets des SEGMA, les CST, et les fonds de concours.</p>
+
+            <h3 class="subsection-title">4. Le principe de spécialité</h3>
+            <p>Exige que les crédits soient présentés et votés avec un niveau de détail précis pour s'imposer aux gestionnaires. Ce principe est atténué par la réforme de la LOLF via la budgétisation par programme (globalisation des crédits).</p>
+
+            <h3 class="subsection-title">5. Le principe d'équilibre</h3>
+            <p>Le budget doit procéder d'une équation égalitaire entre les recettes et les dépenses (solde budgétaire = 0). Cependant, ce principe demeure aujourd'hui une cible politique plutôt qu'une contrainte stricte.</p>
+
+            <h3 class="subsection-title">6. Le principe de sincérité budgétaire et comptable</h3>
+            <p>Les lois de finances et les comptes de l'État doivent être réguliers, sincères et donner une image fidèle du patrimoine. La Cour des comptes certifie cette régularité. L'évaluation reste néanmoins difficile face à l'incertitude macroéconomique.</p>
+
+            <h3 class="subsection-title">7. Le principe de séparation des ordonnateurs et des comptables</h3>
+            <p>Les fonctions d'ordonnateur (qui décide de la dépense/recette) et de comptable (qui manie les fonds) sont incompatibles (Article 4 du Décret de comptabilité publique). Le comptable est indépendant et soumis au ministère des finances.
+            <br><em>Dérogations :</em> Dépenses payées sans ordonnancement préalable (ex: personnel), perception directe de ressources sur déclaration (impôts), et l'action des régisseurs de recettes/dépenses.</p>
+
+            <h3 class="subsection-title">8. Le principe d'égalité en matière fiscale</h3>
+            <p>Fondé sur les articles 39 et 40 de la Constitution. L'<strong>égalité devant l'impôt</strong> s'apprécie isolément pour chaque taxe (situations analogues traitées de la même façon). L'<strong>égalité devant les charges publiques</strong> est plus large et apprécie la situation financière globale du contribuable.</p>
+        </section>
+
+        <section id="chap1-sec4">
+            <h2 class="section-title">Section 4 : Les approches des finances publiques</h2>
+            <p>L'étude des finances publiques s'opère à travers quatre angles de vision distincts :</p>
+            <ul>
+                <li><strong>L'approche juridique :</strong> S'intéresse aux règles juridiques et administratives régissant la préparation, le vote, l'exécution et le contrôle du budget en analysant les textes (LOLF, Constitution, décrets, jurisprudence).</li>
+                <li><strong>L'approche économique :</strong> Étudie les impacts des choix financiers sur le développement économique et social (allocation des ressources, redistribution du revenu national, emploi, cohésion sociale) inspirée des théories keynésiennes après 1929.</li>
+                <li><strong>L'approche managériale :</strong> Développée avec le <em>New Public Management</em>, elle se focalise sur l'optimisation des systèmes de gestion (planification, budgétisation, audit, performance, reddition des comptes et transparence).</li>
+                <li><strong>L'approche sociologique :</strong> Analyse les rapports sociaux entre les finances publiques et la société. Par exemple, les liens entre les choix budgétaires et les classes bénéficiaires, la démocratie fiscale, ou l'influence des finances sur les comportements électoraux et les partis politiques.</li>
+            </ul>
+        </section>
+
+        <header class="header-box">
+            <h1>Chapitre 2 : Le budget de l'État</h1>
+            <p>Cours complet conforme au document officiel du module Finances Publiques (Semestre 4).</p>
+        </header>
+
+        <section id="chap2-intro">
+            <h2 class="section-title">Introduction</h2>
+            <p>Les finances publiques de l'État sont conçues et formalisées de manière impérative dans le cadre des lois de finances. Ainsi, le budget de l'État est techniquement décidé, structuré et voté au sein de la loi de finances.</p>
+            <p>La loi de finances n'est pas un acte administratif figé ou ponctuel. Elle s'inscrit dans un processus dynamique, continu et cyclique appelé <strong>le cycle budgétaire</strong>. Ce cycle annuel et pluriannuel est jalonné par quatre étapes principales et indissociables :</p>
+            <ol>
+                <li>L'élaboration (phase gouvernementale) ;</li>
+                <li>L'adoption (phase parlementaire) ;</li>
+                <li>L'exécution (phase administrative et comptable) ;</li>
+                <li>Le contrôle de l'exécution (phase juridictionnelle, politique et administrative).</li>
+            </ol>
+        </section>
+
+        <section id="chap2-sec1">
+            <h2 class="section-title">Section 1 : Notions de loi de finances et de budget</h2>
+            <p>Dans la pratique administrative et le langage courant, les termes de « loi de finances » et de « budget » sont fréquemment employés l'un pour l'autre pour désigner le document officiel prévoyant et autorisant les deniers publics. Néanmoins, sur le plan conceptuel et théorique, une distinction nette doit être opérée :</p>
+            <div class="highlight-box">
+                Le <strong>budget</strong> constitue la composante purement chiffrée, comptable, technique et évaluative des opérations financières. À l'inverse, la <strong>loi de finances</strong> représente le réceptacle juridique, l'acte d'autorisation politique et l'enveloppe légale qui valide et donne force de loi à ce budget. Le budget est donc l'objet chiffré contenu dans le cadre juridique qu'est la loi de finances.
+            </div>
+
+            <h3 class="subsection-title">1. Définition de la loi de finances</h3>
+            <p>La définition juridique stricte de la loi de finances est directement fournie par l'article premier de la Loi Organique relative aux Lois de Finances (LOLF n° 130.13), qui stipule :</p>
+            <div class="law-text">
+                « La loi de finances détermine, pour chaque année budgétaire, la nature, le montant et l'affectation de l'ensemble des ressources et des charges de l'État, ainsi que l'équilibre budgétaire et financier qui en résulte. Elle tient compte de la conjoncture économique et sociale qui prévaut au moment de sa préparation, ainsi que des objectifs et des résultats des programmes qu'elle définit. »
+            </div>
+
+            <h3 class="subsection-title">2. Définition du budget de l’État</h3>
+            <p>Le budget de l'État est l'acte par lequel sont prévues et autorisées, sous une forme comptable, les charges et les ressources annuelles de l'État. Il s'agit de l'outil d'exécution matérielle de la politique financière publique, détaillant ligne par ligne la provenance de chaque centime de recette et la destination de chaque crédit de dépense.</p>
+        </section>
+
+        <section id="chap2-sec2">
+            <h2 class="section-title">Section 2 : Contenu et structure des lois de finances</h2>
+            <p>Le contenu d'une loi de finances ne peut être discrétionnaire ; il est formellement encadré par des règles de classification. Il est composé des ressources (recettes) et des charges (dépenses) publiques.</p>
+            
+            <h3 class="subsection-title">1. Les ressources de l’État</h3>
+            <p>Les ressources de l'État comprennent principalement :</p>
+            <ul>
+                <li><strong>Les impôts et taxes :</strong> Divisés en impôts directs (Impôt sur les Sociétés - IS, Impôt sur le Revenu - IR) et impôts indirects (Taxe sur la Valeur Ajoutée - TVA, taxes intérieures de consommation).</li>
+                <li><strong>Les droits de douane :</strong> Perçus sur les importations de marchandises.</li>
+                <li><strong>Les revenus du patrimoine de l'État :</strong> Dividendes versés par les entreprises publiques et produits des monopoles de l'État.</li>
+                <li><strong>Les recettes de privatisation :</strong> Produits issus de la cession d'actifs publics au secteur privé.</li>
+                <li><strong>Les dons et legs :</strong> Concours financiers non remboursables d'organismes internationaux ou de pays partenaires.</li>
+                <li><strong>Les produits des emprunts :</strong> Ressources de financement mobilisées sur le marché intérieur ou international (génératrices de dette publique).</li>
+            </ul>
+
+            <h3 class="subsection-title">2. Les charges de l’État</h3>
+            <p>Les charges de l'État sont classées en trois grandes catégories de dépenses :</p>
+            <ul>
+                <li><strong>Les dépenses de fonctionnement :</strong> Nécessaires à la marche quotidienne des services publics (traitements et salaires des fonctionnaires, achats de matériel et fournitures administratives, subventions de la Caisse de compensation).</li>
+                <li><strong>Les dépenses d'investissement :</strong> Destinées au financement des infrastructures structurantes du pays (barrages, autoroutes, hôpitaux, universités) et à la réalisation des plans stratégiques sectoriels.</li>
+                <li><strong>Les dépenses relatives à la dette publique :</strong> Comprenant les amortissements du principal et le paiement des intérêts de la dette à moyen et long termes.</li>
+            </ul>
+
+            <h3 class="subsection-title">3. La structure de la loi de finances</h3>
+            <p>En vertu de la LOLF n° 130.13, la loi de finances ne présente plus les crédits uniquement par nature administrative de dépense, mais selon une <strong>structure de performance</strong>. Les dépenses sont désormais découpées en :</p>
+            <ul>
+                <li><strong>Ministères / Institutions :</strong> Responsables politiques du budget.</li>
+                <li><strong>Programmes :</strong> Regroupements cohérents d'actions concrètes concourant à une même politique publique. Chaque programme est associé à des objectifs précis et mesuré par des <strong>indicateurs de performance</strong>.</li>
+                <li><strong>Régions :</strong> Intégration de la dimension territoriale pour accompagner la régionalisation avancée.</li>
+            </ul>
+        </section>
+
+        <section id="chap2-sec3">
+            <h2 class="section-title">Section 3 : Le cycle budgétaire</h2>
+            <p>Le cycle budgétaire décrit la trajectoire chronologique complète d'une loi de finances, depuis ses premières esquisses techniques jusqu'à sa clôture comptable définitive. Ce processus s'articule autour de 4 phases rigoureuses :</p>
+
+            <h3 class="subsection-title">1. L’élaboration du Projet de Loi de Finances (PLF)</h3>
+            <p>Il s'agit d'une phase exclusivement administrative et gouvernementale, placée sous la responsabilité directe du Chef du Gouvernement et du Ministre chargé des Finances. Elle se déroule tout au long de l'année précédant l'exercice d'exécution selon les étapes suivantes :</p>
+            <ul>
+                <li><strong>Avant le 15 mars :</strong> Le Chef du Gouvernement adresse une note d'orientation générale aux différents ministres, fixant les plafonds de dépenses et les priorités économiques pour l'année à venir.</li>
+                <li><strong>Avril - Mai :</strong> Les ministères sectoriels formalisent leurs propositions de budgets (fonctionnement et investissement) et les transmettent à la Direction du Budget du Ministère des Finances.</li>
+                <li><strong>Juin - Juillet :</strong> Phase de négociation et d'arbitrage budgétaire entre le Ministère des Finances et les différents ministères sectoriels. Avant le 15 juillet, le Ministre des Finances présente en Conseil du Gouvernement l'état d'avancement de la préparation du PLF.</li>
+                <li><strong>Septembre - Début Octobre :</strong> Finalisation du texte du Projet de Loi de Finances, examen et délibération sur ses orientations générales en <strong>Conseil des Ministres</strong> (présidé par Sa Majesté le Roi) puis adoption formelle du projet de texte textuel en <strong>Conseil du Gouvernement</strong>.</li>
+            </ul>
+
+            <h3 class="subsection-title">2. L’adoption de la loi de finances</h3>
+            <p>Dès que le projet est adopté en Conseil du Gouvernement, il quitte la sphère exécutive pour entrer dans la phase législative (le Parlement). Le processus d'adoption obéit à un calendrier constitutionnel strict :</p>
+            <ul>
+                <li><strong>Le dépôt (Au plus tard le 20 octobre) :</strong> Le Projet de Loi de Finances (PLF) de l'année doit être obligatoirement déposé par le Gouvernement sur le bureau de la <strong>Chambre des Représentants</strong> par priorité (Article 75 de la Constitution).</li>
+                <li><strong>L'examen en Commission :</strong> Le texte est analysé en détail par la Commission des Finances. Le Ministre des Finances présente les hypothèses économiques (taux de croissance, prix du gaz, récolte céréalière) et l'équilibre financier global.</li>
+                <li><strong>Le droit d'amendement :</strong> Les parlementaires peuvent proposer des modifications. Toutefois, l'article 77 de la Constitution (recevabilité financière) rejette tout amendement ayant pour conséquence soit une diminution des ressources publiques, soit la création ou l'aggravation d'une charge publique.</li>
+                <li><strong>Le vote à la Chambre des Représentants (30 jours) :</strong> La première chambre examine, amende et vote la première partie (recettes et équilibre) puis la seconde partie (dépenses).</li>
+                <li><strong>Le passage devant la Chambre des Conseillers (22 jours) :</strong> Le PLF est transmis à la seconde chambre qui procède également à son examen et à son vote dans un délai maximal de 22 jours après son dépôt.</li>
+                <li><strong>La navette et l'adoption finale :</strong> En cas de modifications par les Conseillers, le texte retourne à la Chambre des Représentants qui dispose du dernier mot pour l'adoption définitive du texte (dans un délai global fixé à 60 jours à compter du dépôt initial).</li>
+                <li><strong>Mesure d'urgence (Si la LF n'est pas votée avant le 31 décembre) :</strong> L'article 75 de la Constitution prévoit que le gouvernement ouvre, par décret, les crédits nécessaires à la marche des services publics et à l'exercice de leur mission, sur la base des propositions budgétaires soumises à l'autorisation. Les recettes continuent d'être perçues conformément aux dispositions législatives en vigueur (sauf suppressions ou changements de taux proposés, qui sont appliqués au nouveau taux).</li>
+            </ul>
+
+            <h3 class="subsection-title">3. L’exécution de la loi de finances</h3>
+            <p>Une fois votée et publiée au Bulletin Officiel, la loi de finances entre en application au 1er janvier de l'année budgétaire. Son exécution s'opère selon les règles de la comptabilité publique, régie par le <strong>Décret Royal n° 330-66 du 21 avril 1967</strong> portant règlement général de comptabilité publique.</p>
+            <p>L'exécution administrative et comptable repose sur le principe fondamental de <strong>séparation des ordonnateurs et des comptables publics</strong>, dont les rôles sont incompatibles et complémentaires :</p>
+            <ul>
+                <li><strong>L'Ordonnateur public :</strong> C'est l'autorité administrative (Ministre, Directeur d'établissement, Gouverneur) qui détient le pouvoir de décision. Il est chargé d'<strong>engager</strong> la dépense (signer un contrat, passer un marché public), de <strong>constater</strong> le service fait, de <strong>liquider</strong> le montant exact de la dette et d'<strong>ordonner</strong> le paiement (émission d'un ordre de paiement). En matière de recettes, il liquide les créances et émet les ordres de recettes.</li>
+                <li><strong>Le Comptable public :</strong> C'est un agent public spécialisé, relevant exclusivement du Ministère des Finances (Trésorerie Générale du Royaume - TGR, Direction Générale des Impôts - DGI, Douanes). Il détient le monopole exclusif du <strong>maniement des fonds publics</strong>. Avant de payer une dépense, il exerce un contrôle de régularité obligatoire (vérification de la disponibilité des crédits, de l'exactitude des calculs, de la présence des pièces justificatives et de la signature de l'ordonnateur). S'il valide, il procède au décaissement effectif des deniers publics.</li>
+            </ul>
+
+            <h3 class="subsection-title">4. Le contrôle de l’exécution de la loi de finances</h3>
+            <p>Pour s'assurer du respect des autorisations budgétaires, de la légalité des actes de gestion et de l'efficacité des dépenses, le système financier public prévoit plusieurs niveaux de contrôles complémentaires, divisés en deux grandes catégories :</p>
+            <ul>
+                <li><strong>Les contrôles internes (Administratifs) :</strong> Exercés au sein même de l'appareil exécutif par des organes rattachés à l'administration. Ils interviennent a priori ou a posteriori :
+                    <ul>
+                        <li>Le Contrôle des Engagements de Dépenses (CED) : qui vérifie en amont la régularité budgétaire des projets d'engagement.</li>
+                        <li>Les comptables publics : qui bloquent les paiements irréguliers au moment du visa.</li>
+                        <li>L'Inspection Générale des Finances (IGF) : corps d'élite rattaché au Ministère des Finances effectuant des missions d'audit approfondies.</li>
+                        <li>L'Inspection Générale de l'Administration Territoriale (IGAT) et les Inspections Générales des Ministères (IGM).</li>
+                    </ul>
+                </li>
+                <li><strong>Les contrôles externes :</strong> Exercés de manière indépendante par des institutions externes à l'administration pour garantir la transparence démocratique :
+                    <ul>
+                        <li><strong>Le Parlement :</strong> Exerce un contrôle politique via les questions orales/écrites, les commissions d'enquête et le vote obligatoire de la <strong>loi de règlement</strong> (soumise annuellement au cours du deuxième exercice qui suit l'exécution de la loi de finances - Article 76 de la Constitution).</li>
+                        <li><strong>Les Juridictions financières (La Cour des Comptes) :</strong> Institution supérieure de contrôle instituée par l'article 147 de la Constitution. Elle juge les comptes des comptables publics, sanctionne les fautes de gestion des ordonnateurs (Discipline budgétaire et financière) et assiste le Parlement et le Roi dans l'évaluation des politiques publiques.</li>
+                        <li><strong>La Société Civile :</strong> Par le biais des exigences de transparence, d'accès à l'information budgétaire et d'évaluation citoyenne de l'action publique.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <header class="header-box">
+            <h1>Chapitre 3 : Le budget des collectivités territoriales</h1>
+            <p>Module : Finances Publiques (Semestre 4) — Contenu Intégral</p>
+        </header>
+
+        <section id="chap3-intro">
+            <h2 class="section-title">Introduction</h2>
+            <p>Les collectivités territoriales au Maroc sont constituées par <strong>les régions, les préfectures, les provinces et les communes</strong>.</p>
+            <p>Leurs finances relèvent directement du domaine des finances publiques, dans la mesure où ces collectivités constituent des organismes publics de droit public. Toutefois, ces entités se distinguent fondamentalement de l'État central car elles disposent de la personnalité morale و<strong>الأوتونومية الإدارية والمالية (l'autonomie administrative et financière)</strong>. En effet, elles possèdent un budget propre, totalement autonome et distinct du budget général de l'État.</p>
+            <p>De ce fait, les finances des collectivités locales se différencient de celles de l'État par un ensemble de spécificités juridiques, de ressources propres ومساطر تدبيرية خاصة.</p>
+        </section>
+
+        <section id="chap3-sec1">
+            <h2 class="section-title">Section 1 : Les spécificités des finances des collectivités territoriales</h2>
+            <p>L'autonomie financière des collectivités territoriales s'exprime à travers un cadre réglementaire dédié et des principes budgétaires adaptés à la gestion de proximité.</p>
+            
+            <h3 class="subsection-title">1. Le cadre juridique</h3>
+            <p>Les finances locales sont régies essentiellement par un arsenal juridique spécifique composé de lois organiques, de lois ordinaires et de décrets d'application :</p>
+            <div class="law-box">
+                <ul>
+                    <li><strong>La loi organique n° 111-14</strong> relative aux régions.</li>
+                    <li><strong>La loi organique n° 112-14</strong> relative aux préfectures et provinces.</li>
+                    <li><strong>La loi organique n° 113-14</strong> relative aux communes.</li>
+                    <li><strong>La loi n° 47-06</strong> du 30 novembre 2007 relative à la fiscalité des collectivités territoriales (et ses modifications).</li>
+                    <li><strong>Le décret n° 2-09-441</strong> du 17 moharrem 1431 (18 février 2010) portant règlement de la comptabilité publique des collectivités locales et de leurs groupements.</li>
+                    <li><strong>La loi n° 62-99</strong> formant code des juridictions financières.</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">2. Les principes fondamentaux</h3>
+            <p>Bien que les collectivités partagent avec l'État les grands principes classiques (annualité, unité, universalité, spécialité), elles obéissent à des contraintes spécifiques :</p>
+            <ul>
+                <li><strong>L'obligation d'équilibre réel :</strong> Contrairement à l'État qui peut voter un budget en déficit (comblé par l'emprunt), le budget d'une collectivité territoriale doit impérativement être voté et arrêté en <strong>équilibre réel</strong> entre les recettes et les dépenses. Le déficit y est strictement interdit par la loi.</li>
+                <li><strong>La tutelle administrative :</strong> L'autonomie financière est encadrée. Les décisions financières majeures et le budget voté ne deviennent exécutoires qu'après avoir reçu le <strong>visa de l'autorité de tutelle</strong> (Le Wali ou le Gouverneur pour les communes et provinces, et le Ministre de l'Intérieur pour les régions).</li>
+            </ul>
+        </section>
+
+        <section id="chap3-sec2">
+            <h2 class="section-title">Section 2 : Contenu et structure du budget des collectivités territoriales</h2>
+            <p>Le budget des collectivités locales est un document prévisionnel qui détaille les ressources et les charges réparties de façon binaire en deux sections distinctes (Fonctionnement et Équipement).</p>
+            
+            <h3 class="subsection-title">1. Les recettes des collectivités</h3>
+            <p>Les ressources financières locales sont classées selon leur origine :</p>
+            <ul>
+                <li><strong>Les recettes fiscales propres :</strong> Impôts et taxes locaux gérés directement par la collectivité ou par l'État pour son compte (ex: taxe d'habitation, taxe de services communaux, taxe sur les terrains urbains non bâtis - TNB).</li>
+                <li><strong>Les parts de la fiscalité d'État :</strong> Produits fiscaux nationaux rétrocédés en partie aux collectivités. C'est notamment le cas de la <strong>TVA (Taxe sur la Valeur Ajoutée)</strong> dont une part importante est réservée par l'État pour alimenter les budgets locaux.</li>
+                <li><strong>Les recettes non fiscales :</strong> Produits de l'exploitation du domaine public ou privé de la collectivité (loyers, marchés publics, redevances de stationnement), amendes, ainsi que les subventions d'équilibre ou de soutien accordées par l'État.</li>
+                <li><strong>Les produits des emprunts :</strong> Fonds mobilisés auprès d'organismes de crédit spécialisés (principalement le Fonds d'Équipement Communal - FEC) uniquement dédiés au financement des projets d'investissement.</li>
+            </ul>
+
+            <h3 class="subsection-title">2. Les dépenses des collectivités</h3>
+            <p>Elles se structurent obligatoirement en deux catégories :</p>
+            <ul>
+                <li><strong>Les dépenses de fonctionnement :</strong> Charges de gestion courante indispensables à la survie de la collectivité (frais de personnel, électricité, eau, entretien du réseau routier local, fournitures administratives, intérêts de la dette).</li>
+                <li><strong>Les dépenses d'équipement (Investissement) :</strong> Destinées à accroître le patrimoine de la collectivité (aménagement urbain, construction d'écoles communales, de centres de santé, de routes rurales, remboursement du principal de la dette).</li>
+            </ul>
+        </section>
+
+        <section id="chap3-sec3">
+            <h2 class="section-title">Section 3 : Le cycle budgétaire des collectivités territoriales</h2>
+            <p>Le cycle budgétaire local comprend les quatre étapes traditionnelles mais adaptées au principe de la démocratie locale et de la décentralisation.</p>
+
+            <h3 class="subsection-title">1. L'élaboration du budget</h3>
+            <p>La préparation du projet de budget est une prérogative du <strong>Président du conseil</strong> de la collectivité territoriale (Président de la Commune, du Conseil Provincial ou Régional) assisté par les services financiers internes. Le projet est établi sur la base des orientations de l'autorité de tutelle et des prévisions de recettes fournies par le Ministère des Finances.</p>
+            <div class="alert-box">
+                <strong>Modification en cours d'année :</strong> Le budget peut être modifié en cours d'exercice par l'établissement de budgets modificatifs (décisions modificatives). Celles-ci doivent suivre exactement les mêmes formes et conditions que celles requises pour l'adoption du budget initial.
+            </div>
+
+            <h3 class="subsection-title">2. L'adoption du budget et le visa</h3>
+            <p>Le projet de budget est examiné, débattu et adopté par l'assemblée délibérante (le Conseil) au cours d'une session ordinaire selon les modalités fixées par les lois organiques.</p>
+            <p>Une fois voté par le Conseil, le budget doit être impérativement présenté à l'autorité de tutelle pour l'obtention du <strong>visa</strong>. Avant d'accorder ce visa, l'autorité de tutelle effectue trois contrôles légaux stricts :</p>
+            <ol>
+                <li>Le respect des dispositions des lois organiques relatives aux collectivités territoriales et des lois et règlements en vigueur ;</li>
+                <li>L'équilibre réel du budget établi sur la base de la <strong>sincérité des prévisions</strong> des recettes et des dépenses ;</li>
+                <li>L'inscription obligatoire des <strong>dépenses obligatoires</strong> (salaires, dettes, charges incompressibles).</li>
+            </ol>
+            <p>Une fois le visa obtenu, le budget acquiert un caractère exécutoire.</p>
+
+            <h3 class="subsection-title">3. L'exécution du budget</h3>
+            <p>L'exécution matérielle des opérations financières incombe à deux autorités distinctes, en application du principe de séparation des fonctions :</p>
+            <ul>
+                <li><strong>Le président du conseil de la collectivité :</strong> Il agit en qualité d'<strong>ordonnateur (Ordonnateur public)</strong>. C'est lui qui prescrit l'exécution des recettes et des dépenses.</li>
+                <li><strong>Le trésorier (Comptable public) :</strong> Il assure l'exécution technique des opérations de paiement et de recouvrement et veille à la régularité des actes financiers.</li>
+            </ul>
+
+            <h3 class="subsection-title">4. Le contrôle du budget</h3>
+            <p>Pour garantir la transparence et l'intégrité de la gestion financière locale, le budget des collectivités territoriales est soumis à un système de contrôle rigoureux à plusieurs niveaux :</p>
+            <ul>
+                <li><strong>Le contrôle administratif de tutelle :</strong> Exercé en amont et en aval par les gouverneurs et les services du Ministère de l'Intérieur.</li>
+                <li><strong>Le contrôle de régularité comptable :</strong> Assuré au quotidien par les comptables publics de la Trésorerie Générale du Royaume (TGR).</li>
+                <li><strong>Les inspections de contrôle supérieur :</strong> Missions de vérification menées sur le terrain par l'<strong>Inspection Générale des Finances (IGF)</strong> et l'<strong>Inspection Générale de l'Administration Territoriale (IGAT)</strong>.</li>
+                <li><strong>Le contrôle juridictionnel :</strong> Assuré par les <strong>Cours Régionales des Comptes (CRC)</strong>, qui contrôlent la régularité des comptes des gestionnaires locaux et évaluent la rentabilité et la gestion des services publics territoriaux.</li>
+            </ul>
+        </section>
+
+        <section id="glossaire">
+            <h2 class="section-title">Glossaire des Abréviations et Sigles</h2>
+            <p>Cette page additionnelle répertorie la signification de l'ensemble des acronymes techniques rencontrés tout au long du cours.</p>
+            
+            <dl class="glossary-grid">
+                <div class="glossary-item">
+                    <dt>LOLF</dt>
+                    <dd>Loi Organique relative aux Lois de Finances.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>LOF</dt>
+                    <dd>Loi Organique des Finances.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>LF</dt>
+                    <dd>Loi de Finances.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>PLF</dt>
+                    <dd>Projet de Loi de Finances.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>CT</dt>
+                    <dd>Collectivités Territoriales (Régions, Préfectures, Provinces, Communes).</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>TGR</dt>
+                    <dd>Trésorerie Générale du Royaume.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>IGF</dt>
+                    <dd>Inspection Générale des Finances.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>IGAT</dt>
+                    <dd>Inspection Générale de l'Administration Territoriale.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>IGM</dt>
+                    <dd>Inspections Générales des Ministères.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>CRC</dt>
+                    <dd>Cour Régionale des Comptes.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>IS</dt>
+                    <dd>Impôt sur les Sociétés.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>IR</dt>
+                    <dd>Impôt sur le Revenu.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>TVA</dt>
+                    <dd>Taxe sur la Valeur Ajoutée.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>TNB</dt>
+                    <dd>Taxe sur les terrains urbains Non Bâtis.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>DGI</dt>
+                    <dd>Direction Générale des Impôts.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>CED</dt>
+                    <dd>Contrôle des Engagements de Dépenses.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>FEC</dt>
+                    <dd>Fonds d'Équipement Communal.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>SEGMA</dt>
+                    <dd>Services de l'État Gérés de Manière Autonome.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>CST</dt>
+                    <dd>Comptes Spéciaux du Trésor.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>FMI</dt>
+                    <dd>Fonds Monétaire International.</dd>
+                </div>
+                <div class="glossary-item">
+                    <dt>U.E / U.A</dt>
+                    <dd>Union Européenne / Union Africaine.</dd>
+                </div>
+            </dl>
+        </section>
+    </main>
+
 </body>
 </html>
