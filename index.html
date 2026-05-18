@@ -11,6 +11,7 @@
             --accent-color: #c0392b;
             --bg-color: #f8f9fa;
             --text-color: #2c3e50;
+            --arabic-color: #555;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -37,32 +38,6 @@
         header h1 { margin: 0; font-size: 2.5em; }
         header p { margin: 10px 0 0 0; font-size: 1.2em; opacity: 0.9; }
         
-        .nav-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .tab-btn {
-            background-color: #eee;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-weight: bold;
-            color: var(--primary-color);
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        .tab-btn.active, .tab-btn:hover {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-        
         .section-content {
             background: white;
             padding: 40px;
@@ -78,7 +53,7 @@
             margin-top: 0;
         }
         h3 { color: var(--secondary-color); margin-top: 25px; }
-        h4 { color: var(--accent-color); }
+        h4 { color: var(--accent-color); margin-top: 20px; }
         
         table {
             width: 100%;
@@ -133,6 +108,20 @@
             border-left: 3px solid var(--primary-color);
         }
         .abbr-item strong { color: var(--accent-color); }
+        
+        .ar {
+            direction: rtl;
+            text-align: right;
+            color: var(--arabic-color);
+            font-size: 1.05em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            display: block;
+            font-family: 'Amiri', 'Traditional Arabic', Georgia, serif;
+        }
+        th .ar, td .ar {
+            margin: 5px 0 0 0;
+        }
     </style>
 </head>
 <body>
@@ -140,150 +129,223 @@
 <div class="container">
     <header>
         <h1>FINANCES PUBLIQUES - SEMESTRE 4</h1>
+        <p class="ar">المالية العامة - السداسي الرابع</p>
         <p>Université Hassan 1er de Settat - Faculté d'Économie et de Gestion</p>
+        <p class="ar">جامعة الحسن الأول بسطات - كلية الاقتصاد والتدبير</p>
         <p>Cours exhaustif révisé de l'Enseignant Abdelaziz EL OUALI (Année Universitaire 2025-2026)</p>
+        <p class="ar">المطبوع الشامل والمراجع للأستاذ عبد العزيز الوالي (السنة الجامعية 2025-2026)</p>
     </header>
 
     <div class="section-content">
         <h2>Lexique des Sigles et Abréviations du Cours</h2>
+        <h2 class="ar">معجم الرموز والمصطلحات المختصرة للمادة</h2>
         <div class="abbreviation-list">
-            <div class="abbr-item"><strong>BG :</strong> Budget Général de l'État</div>
-            <div class="abbr-item"><strong>LOLF :</strong> Loi Organique relative à la Loi de Finances</div>
-            <div class="abbr-item"><strong>LFA :</strong> Loi de Finances de l'Année</div>
-            <div class="abbr-item"><strong>LFR :</strong> Loi de Finances Rectificative</div>
-            <div class="abbr-item"><strong>LR :</strong> Loi de Règlement</div>
-            <div class="abbr-item"><strong>PLF :</strong> Projet de Loi de Finances</div>
-            <div class="abbr-item"><strong>DOB :</strong> Débat d'Orientation Budgétaire</div>
-            <div class="abbr-item"><strong>SEGMA :</strong> Services de l'État Gérés de Manière Autonome</div>
-            <div class="abbr-item"><strong>CST :</strong> Comptes Spéciaux du Trésor</div>
-            <div class="abbr-item"><strong>CT :</strong> Collectivités Territoriales</div>
-            <div class="abbr-item"><strong>RGCP :</strong> Règlement Général de Comptabilité Publique</div>
-            <div class="abbr-item"><strong>NPM :</strong> New Public Management (Nouveau Management Public)</div>
-            <div class="abbr-item"><strong>PAS :</strong> Programme d'Ajustement Structurel</div>
-            <div class="abbr-item"><strong>IGF :</strong> Inspection Générale des Finances</div>
-            <div class="abbr-item"><strong>IGAT :</strong> Inspection Générale de l'Administration Territoriale</div>
-            <div class="abbr-item"><strong>IGM :</strong> Inspection Générale des Ministères</div>
-            <div class="abbr-item"><strong>CED :</strong> Contrôle des Engagements de Dépenses</div>
-            <div class="abbr-item"><strong>EEP :</strong> Établissements et Entreprises Publics</div>
-            <div class="abbr-item"><strong>PDR :</strong> Plan de Développement Régional</div>
-            <div class="abbr-item"><strong>FEC :</strong> Fonds d'Équipement Communal</div>
-            <div class="abbr-item"><strong>UE / UA :</strong> Union Européenne / Union Africaine</div>
+            <div class="abbr-item"><strong>BG :</strong> Budget Général de l'État<span class="ar">الميزانية العامة للدولة</span></div>
+            <div class="abbr-item"><strong>LOLF :</strong> Loi Organique relative à la Loi de Finances<span class="ar">القانون التنظيمي للمالية</span></div>
+            <div class="abbr-item"><strong>LFA :</strong> Loi de Finances de l'Année<span class="ar">قانون المالية للسنة</span></div>
+            <div class="abbr-item"><strong>LFR :</strong> Loi de Finances Rectificative<span class="ar">قانون المالية التعديلي</span></div>
+            <div class="abbr-item"><strong>LR :</strong> Loi de Règlement<span class="ar">قانون التصفية</span></div>
+            <div class="abbr-item"><strong>PLF :</strong> Projet de Loi de Finances<span class="ar">مشروع قانون المالية</span></div>
+            <div class="abbr-item"><strong>DOB :</strong> Débat d'Orientation Budgétaire<span class="ar">مناقشة التوجهات الميزانياتية</span></div>
+            <div class="abbr-item"><strong>SEGMA :</strong> Services de l'État Gérés de Manière Autonome<span class="ar">مصالح الدولة المسيرة بطريقة مستقلة</span></div>
+            <div class="abbr-item"><strong>CST :</strong> Comptes Spéciaux du Trésor<span class="ar">الحسابات الخصوصية للخزينة</span></div>
+            <div class="abbr-item"><strong>CT :</strong> Collectivités Territoriales<span class="ar">الجماعات الترابية</span></div>
+            <div class="abbr-item"><strong>RGCP :</strong> Règlement Général de Comptabilité Publique<span class="ar">النظام العام للمحاسبة العمومية</span></div>
+            <div class="abbr-item"><strong>NPM :</strong> New Public Management (Nouveau Management Public)<span class="ar">التدبير العمومي الحديث</span></div>
+            <div class="abbr-item"><strong>PAS :</strong> Programme d'Ajustement Structurel<span class="ar">برنامج التقويم الهيكلي</span></div>
+            <div class="abbr-item"><strong>IGF :</strong> Inspection Générale des Finances<span class="ar">المفتشية العامة للمالية</span></div>
+            <div class="abbr-item"><strong>IGAT :</strong> Inspection Générale de l'Administration Territoriale<span class="ar">المفتشية العامة للإدارة الترابية</span></div>
+            <div class="abbr-item"><strong>IGM :</strong> Inspection Générale des Ministères<span class="ar">المفتشية العامة للوزارات</span></div>
+            <div class="abbr-item"><strong>CED :</strong> Contrôle des Engagements de Dépenses<span class="ar">مراقبة الالتزام بالنفقات</span></div>
+            <div class="abbr-item"><strong>EEP :</strong> Établissements et Entreprises Publics<span class="ar">المؤسسات والمقاولات العمومية</span></div>
+            <div class="abbr-item"><strong>PDR :</strong> Plan de Développement Régional<span class="ar">برنامج التنمية الجهوية</span></div>
+            <div class="abbr-item"><strong>FEC :</strong> Fonds d'Équipement Communal<span class="ar">صندوق التجهيز الجماعي</span></div>
+            <div class="abbr-item"><strong>UE / UA :</strong> Union Européenne / Union Africaine<span class="ar">الاتحاد الأوروبي / الاتحاد الأفريقي</span></div>
         </div>
     </div>
 
     <div class="section-content">
         <h2>Généralités et Notions Fondamentales</h2>
+        <h2 class="ar">عاميات ومفاهيم أساسية</h2>
+        
         <h3>1. Définition des Finances Publiques</h3>
-        <p>Les finances publiques étudient l'ensemble des techniques, des opérations et des règles régissant les recettes, les dépenses, l'exécution et le contrôle de ces ressources et charges publiques. Elles englobent de manière structurelle quatre grands domaines :</p>
+        <h3 class="ar">1. تعريف المالية العامة</h3>
+        <p>Les finances publiques étudient l'ensemble des techniques, des opérations et des règles régissant les recettes, les dépenses, l'exécution et le contrôle de ces ressources et charges publiques.</p>
+        <p class="ar">تدرس المالية العامة مجموعة التقنيات والعمليات والقواعد التي تحكم إيرادات ونفقات وتنفيذ ومراقبة الموارد والأعباء العمومية.</p>
+        
+        <p>Elles englobent de manière structurelle quatre grands domaines :</p>
+        <p class="ar">وتشمل من الناحية البنيوية أربعة مجالات كبرى:</p>
         <ul>
-            <li>Les finances de l'État.</li>
-            <li>Les finances des collectivités territoriales (CT) et des établissements publics.</li>
-            <li>Les finances des personnes de droit privé soumises au contrôle des juridictions financières (tels que les syndicats et les partis politiques bénéficiant du soutien public).</li>
-            <li>Les finances des groupements régionaux (UE, UA).</li>
+            <li>Les finances de l'État.<span class="ar">مالية الدولة.</span></li>
+            <li>Les finances des collectivités territoriales (CT) et des établissements publics.<span class="ar">مالية الجماعات الترابية والمؤسسات العمومية.</span></li>
+            <li>Les finances des personnes de droit privé soumises au contrôle des juridictions financières (tels que les syndicats et les partis politiques bénéficiant du soutien public).<span class="ar">مالية الأشخاص الاعتباريين الخاضعين للقانون الخاص والمستهدفين بمراقبة المحاكم المالية (كالنقابات والأحزاب السياسية المستفيدة من الدعم العمومي).</span></li>
+            <li>Les finances des groupements régionaux (UE, UA).<span class="ar">مالية التكتلات الإقليمية (الاتحاد الأوروبي، الاتحاد الأفريقي).</span></li>
         </ul>
 
         <h3>2. Distinction entre Finances Publiques et Finances Privées</h3>
+        <h3 class="ar">2. التمييز بين المالية العامة والمالية الخاصة</h3>
         <ul>
-            <li><strong>L'Objectif :</strong> Les finances publiques visent la satisfaction exclusive de l'<strong>intérêt général</strong> et la continuité du service public. À l'inverse, les finances privées recherchent l'intérêt particulier et la maximisation du profit.</li>
-            <li><strong>Le Cadre Juridique :</strong> Les finances publiques relèvent du <strong>droit public</strong> et mettent en œuvre des prérogatives de puissance publique (telles que le recouvrement forcé et la contrainte fiscale). Les finances privées sont encadrées par le droit privé, fondé sur l'autonomie de la volonté et l'égalité contractuelle.</li>
-            <li><strong>Les Moyens et Ressources :</strong> L'État dispose du pouvoir unilatéral de lever l'impôt, tandis que les entités privées dépendent de ressources contractuelles, d'échanges commerciaux ou de la gestion de leur patrimoine.</li>
+            <li><strong>L'Objectif :</strong> Les finances publiques visent la satisfaction exclusive de l'<strong>intérêt général</strong> et la continuité du service public. À l'inverse, les finances privées recherchent l'intérêt particulier et la maximisation du profit.
+            <span class="ar"><strong>الهدف:</strong> تهدف المالية العامة إلى تحقيق <strong>المنفعة العامة</strong> حصرياً واستمرارية المرفق العام. وعلى العكس من ذلك، تبحث المالية الخاصة عن المصلحة الخاصة وتحقيق أقصى قدر من الأرباح.</span></li>
+            
+            <li><strong>Le Cadre Juridique :</strong> Les finances publiques relèvent du <strong>droit public</strong> et mettent en œuvre des prérogatives de puissance publique (telles que le recouvrement forcé et la contrainte fiscale). Les finances privées sont régies par le droit privé, fondé sur l'autonomie de la volonté et l'égalité contractuelle.
+            <span class="ar"><strong>الإطار القانوني:</strong> تندرج المالية العامة ضمن <strong>القانون العام</strong> وتطبق امتيازات السلطة العامة (مثل التحصيل الجبري والإكراه البدني الفوقي). بينما تخضع المالية الخاصة للقانون الخاص، القائم على استقلالية الإرادة والمساواة التعاقدية.</span></li>
+            
+            <li><strong>Les Moyens et Ressources :</strong> L'État dispose du pouvoir unilatéral de lever l'impôt, tandis que les entités privées dépendent de ressources contractuelles, d'échanges commerciaux ou de la gestion de leur patrimoine.
+            <span class="ar"><strong>الوسائل والموارد:</strong> تملك الدولة سلطة أحادية لفرض وجباية الضرائب، بينما تعتمد الهيئات الخاصة على الموارد التعاقدية، التبادل التجاري، أو تدبير ممتلكاتها الخاصة.</span></li>
         </ul>
 
         <h3>3. Les 3 Fonctions de Musgrave (1959)</h3>
+        <h3 class="ar">3. وظائف ماسغريف الثلاث (1959)</h3>
         <p>L'économiste américain Richard Abel Musgrave conceptualise l'intervention de l'État à travers trois fonctions budgétaires majeures :</p>
+        <p class="ar">وضع الاقتصاد الأمريكي ريتشارد أبيل ماسغريف تصوراً لتدخل الدولة من خلال ثلاث وظائف ميزانياتية رئيسية:</p>
         <ol>
-            <li><strong>L'Allocation (Todes-mécanisme de ressources) :</strong> Permet la satisfaction des besoins publics par le financement de biens dits "publics" que le marché refuse de produire ou produit de manière insuffisante en raison de leur faible rentabilité immédiate (par exemple : l'éclairage public, la sécurité nationale, la justice et l'éducation).</li>
-            <li><strong>La Stabilisation :</strong> Utilisation active du budget comme outil de régulation conjoncturelle pour lutter contre les déséquilibres économiques (mise en œuvre d'une politique de relance par le déficit en cas de chômage massif, ou d'une politique de rigueur pour freiner l'inflation).</li>
-            <li><strong>La Redistribution :</strong> Correction des inégalités économiques et sociales générées naturellement par le jeu du marché libre. Elle s'effectue via la progressivité des impôts et l'attribution de transferts sociaux ou de subventions (ex: le fonds de compensation).</li>
+            <li><strong>L'Allocation :</strong> Permet la satisfaction des besoins publics par le financement de biens dits "publics" que le marché refuse de produire ou produit de manière insuffisante en raison de leur faible rentabilité immédiate (par exemple : l'éclairage public, la sécurité nationale, la justice et l'éducation).
+            <span class="ar"><strong>التخصيص:</strong> يسمح بتلبية الاحتياجات العامة من خلال تمويل ما يسمى بالسلع "العمومية" التي يرفض السوق إنتاجها أو ينتجها بشكل غير كافٍ بسبب ضعف ربحيتها الفورية (مثل: الإنارة العمومية، الأمن الوطني، العدالة والتعليم).</span></li>
+            
+            <li><strong>La Stabilisation :</strong> Utilisation active du budget comme outil de régulation conjoncturelle pour lutter contre les déséquilibres économiques (mise en œuvre d'une politique de relance par le déficit en cas de chômage massif, ou d'une politique de rigueur pour freiner l'inflation).
+            <span class="ar"><strong>التثبيت:</strong> الاستخدام النشط للميزانية كأداة للتدبير الظرفي من أجل محاربة الاختلالات الاقتصادية (تطبيق سياسة الإنعاش عبر العجز في حالة البطالة الجماعية، أو سياسة التقشف لكبح التضخم).</span></li>
+            
+            <li><strong>La Redistribution :</strong> Correction des inégalités économiques et sociales générées naturellement par le jeu du marché libre. Elle s'effectue via la progressivité des impôts et l'attribution de transferts sociaux ou de subventions (ex: le fonds de compensation).
+            <span class="ar"><strong>إعادة التوزيع:</strong> تصحيح الفوارق الاقتصادية والاجتماعية الناتجة طبيعياً عن آليات السوق الحر. وتتم عبر تصاعدية الضرائب ومنح المساعدات الاجتماعية أو الدعم (مثل: صندوق المقاصة).</span></li>
         </ol>
     </div>
 
     <div class="section-content">
         <h2>Chapitre 1 : Le Cadre Général des Finances Publiques</h2>
+        <h2 class="ar">الافصل الأول: الإطار العام للمالية العامة</h2>
         
         <h3>Section 1 : Le Cadre Historique Évolutif</h3>
+        <h3 class="ar">المبحث الأول: الإطار التاريخي التطوري</h3>
         
         <h4>1. Les Finances Publiques Classiques (XVIIIe – début XXe siècle)</h4>
+        <h4>1. المالية العامة التقليدية (القرن 18 – بداية القرن 20)</h4>
         <ul>
-            <li><strong>Période et contexte :</strong> De 1776 (Adam Smith) à la grande crise de 1929. C'est l'époque du libéralisme triomphant et de la première révolution industrielle.</li>
-            <li><strong>L'État Gendarme :</strong> L'État doit limiter strictement ses interventions aux fonctions régaliennes classiques : la défense nationale, la sécurité intérieure, la diplomatie et la justice, ainsi qu'à de rares infrastructures de base (voiries, routes).</li>
+            <li><strong>Période et contexte :</strong> De 1776 (Adam Smith) à la grande crise de 1929. C'est l'époque du libéralisme triomphant et de la première révolution industrielle.
+            <span class="ar"><strong>الفترة والسياق:</strong> من سنة 1776 (آدام سميث) إلى الأزمة الاقتصادية الكبرى لسنة 1929. وهي فترة الليبرالية المزدهرة والثورة الصناعية الأولى.</span></li>
+            
+            <li><strong>L'État Gendarme :</strong> L'État doit limiter strictement ses interventions aux fonctions régaliennes classiques : la défense nationale, la sécurité intérieure, la diplomatie et la justice, ainsi qu'à de rares infrastructures de base (voiries, routes).
+            <span class="ar"><strong>الدولة الحارسة:</strong> يجب على الدولة أن تقصر تدخلاتها بشكل صارم على وظائف السيادة الكلاسيكية: الدفاع الوطني، الأمن الداخلي، الدبلوماسية والعدالة، بالإضافة إلى البنيات التحتية الأساسية النادرة (الطرق والمسالك).</span></li>
+            
             <li><strong>Caractéristiques majeures :</strong>
+            <span class="ar"><strong>الخصائص الرئيسية:</strong></span>
                 <ul>
-                    <li><strong>Un budget limité :</strong> Le volume des dépenses publiques doit être minime pour ne pas confisquer les capitaux du secteur privé.</li>
-                    <li><strong>Un équilibre budgétaire strict :</strong> Les recettes de l'année doivent impérativement égaler les dépenses. Le déficit est conçu comme une faute économique et morale.</li>
-                    <li><strong>Le rejet de l'emprunt :</strong> Interdit sauf en cas de force majeure (guerre), car il reporte injustement la charge financière sur les générations futures.</li>
-                    <li><strong>La neutralité fiscale :</strong> L'impôt sert uniquement à couvrir les dépenses courantes de l'État gendarme, sans volonté de modifier l'ordre économique ou social.</li>
+                    <li><strong>Un budget limité :</strong> Le volume des dépenses publiques doit être minime pour ne pas confisquer les capitaux du secteur privé.
+                    <span class="ar"><strong>ميزانية محدودة:</strong> يجب أن يكون حجم النفقات العمومية ضعيفاً لكي لا يتم حجز رساميل القطاع الخاص.</span></li>
+                    <li><strong>Un équilibre budgétaire strict :</strong> Les recettes de l'année doivent impérativement égaler les dépenses. Le déficit est conçu comme une faute économique et morale.
+                    <span class="ar"><strong>توازن ميزانياتي صارم:</strong> يجب أن تتساوى إيرادات السنة تماماً مع النفقات. ويعتبر العجز خطأً اقتصادياً وأخلاقياً.</span></li>
+                    <li><strong>Le rejection de l'emprunt :</strong> Interdit sauf en cas de force majeure (guerre), car il reporte injustement la charge financière sur les générations futures.
+                    <span class="ar"><strong>رفض القروض:</strong> ممنوع إلا في حالة القوة القاهرة (الحروب)، لأنه ينقل العبء المالي بشكل غير عادل إلى الأجيال القادمة.</span></li>
+                    <li><strong>La neutralité fiscale :</strong> L'impôt sert uniquement à couvrir les dépenses courantes de l'État gendarme, sans volonté de modifier l'ordre économique ou social.
+                    <span class="ar"><strong>الحياد الضريبي:</strong> تؤدي الضريبة وظيفة وحيدة وهي تغطية النفقات الجارية للدولة الحارسة، دون وجود رغبة في تغيير النظام الاقتصادي أو الاجتماعي.</span></li>
                 </ul>
             </li>
         </ul>
 
         <h4>2. Les Finances Publiques Modernes (1929 – fin des années 1970)</h4>
+        <h4>2. المالية العامة الحديثة (1929 – نهاية السبعينات)</h4>
         <ul>
-            <li><strong>Déclencheur :</strong> Le krach boursier de 1929 (Grande Dépression), prouvant l'incapacité du marché libre à s'auto-réguler.</li>
-            <li><strong>Théorie de référence :</strong> John Maynard Keynes et son ouvrage "Théorie générale" (1936).</li>
-            <li><strong>L'État Providence :</strong> L'État devient interventionniste et utilise le budget comme levier pour stimuler la demande effective et garantir le plein emploi.</li>
-            <li><strong>Caractéristiques majeures :</strong> L'accroissement continu des dépenses publiques, l'acceptation délibérée du déficit budgétaire comme outil de relance (multiplicateur keynésien), le recours généralisé à l'emprunt à long terme et la naissance des premières Lois Organiques relatives aux Lois de Finances.</li>
+            <li><strong>Déclencheur :</strong> Le krach boursier de 1929 (Grande Dépression), prouvant l'incapacité du marché libre à s'auto-réguler.
+            <span class="ar"><strong>الشرارة:</strong> انهيار البورصة لسنة 1929 (الكساد الكبير)، والذي أثبت عجز السوق الحرة عن تنظيم نفسها ذاتياً.</span></li>
+            
+            <li><strong>Théorie de référence :</strong> John Maynard Keynes et son ouvrage "Théorie générale" (1936).
+            <span class="ar"><strong>النظرية المرجعية:</strong> جون ماينارد كينز ومؤلفه "النظرية العامة" (1936).</span></li>
+            
+            <li><strong>L'État Providence :</strong> L'État devient interventionniste et utilise le budget comme levier pour stimuler la demande effective et garantir le plein emploi.
+            <span class="ar"><strong>الدولة المتدخلة (الراعية):</strong> تصبح الدولة متدخلة وتستخدم الميزانية كرافعة لتحفيز الطلب الفعال وضمان التشغيل الكامل.</span></li>
+            
+            <li><strong>Caractéristiques majeures :</strong> L'accroissement continu des dépenses publiques, l'acceptation délibérée du déficit budgétaire comme outil de relance (multiplicateur keynésien), le recours généralisé à l'emprunt à long terme et la naissance des premières Lois Organiques relatives aux Lois de Finances.
+            <span class="ar"><strong>الخصائص الرئيسية:</strong> النمو المستمر للنفقات العمومية، القبول الإرادي للعجز الميزانياتي كأداة للإنعاش (المضاعف الكينزي)، الاعتماد المعمم على القروض طويلة الأجل، وولادة أولى القوانين التنظيمية للمالية.</span></li>
         </ul>
 
         <h4>3. Les Finances Publiques Contemporaines (1980 – Aujourd'hui)</h4>
+        <h4>3. المالية العامة المعاصرة (1980 – إلى اليوم)</h4>
         <ul>
-            <li><strong>Contexte :</strong> Les chocs pétroliers de 1973 et 1979 et l'apparition de la stagflation (inflation couplée à une stagnation de la croissance), marquant l'échec des relances keynésiennes traditionnelles.</li>
-            <li><strong>Le virage néolibéral :</strong> Passage vers un "État stratège". C'est l'époque des Programmes d'Ajustement Structurel (PAS) imposés par le FMI et la Banque mondiale durant les années 1980-1990 (austérité, privatisations, réformes fiscales).</li>
-            <li><strong>Caractéristiques majeures :</strong> Maîtrise rigoureuse des déficits publics, développement des finances supranationales et infranationales (décentralisation), et introduction du Nouveau Management Public (NPM) axé sur la performance, l'évaluation et les principes de transparence et de sincérité.</li>
+            <li><strong>Contexte :</strong> Les chocs pétroliers de 1973 et 1979 et l'apparition de la stagflation (inflation couplée à une stagnation de la croissance), marquant l'échec des relances keynésiennes traditionnelles.
+            <span class="ar"><strong>السياق:</strong> الصدمات النفطية لسنتي 1973 و1979 وظهور التضخم الركودي (تضخم مصحوب بركود النمو)، مما أعلن فشل خطط الإنعاش الكينزية التقليدية.</span></li>
+            
+            <li><strong>Le virage néolibéral :</strong> Passage vers un "État stratège". C'est l'époque des Programmes d'Ajustement Structurel (PAS) imposés par le FMI et la Banque mondiale durant les années 1980-1990 (austérité, privatisations, réformes fiscales).
+            <span class="ar"><strong>التحول النيوليبرالي:</strong> الانتقال نحو "الدولة الاستراتيجية". وهي فترة برامج التقويم الهيكلي (PAS) المفروضة من طرف صندوق النقد الدولي والبنك الدولي خلال سنوات 1980-1990 (التقشف، الخصخصة، والإصلاحات الضريبية).</span></li>
+            
+            <li><strong>Caractéristiques majeures :</strong> Maîtrise rigoureuse des déficits publics, développement des finances supranationales et infranationales (décentralisation), et introduction du Nouveau Management Public (NPM) axé sur la performance, l'évaluation et les principes de transparence et de sincérité.
+            <span class="ar"><strong>الخصائص الرئيسية:</strong> التحكم الصارم في العجز العمومي، تطور المالية فوق الوطنية وتحت الوطنية (اللامركزية)، وإدخال التدبير العمومي الحديث (NPM) القائم على الأداء، التقييم، ومبادئ الصدقية والشفافية.</span></li>
         </ul>
 
         <h3>Section 2 : Les Quatre Approches d'Analyse des Finances Publiques</h3>
+        <h3 class="ar">المبحث الثاني: المقاربات الأربع لتحليل المالية العامة</h3>
         <ol>
-            <li><strong>L'Approche Juridique :</strong> Analyse les règles administratives et législatives encadrant le budget (élaboration, vote, exécution, comptabilité publique et contrôle). Elle repose sur l'étude des textes constitutionnels, de la LOLF, des décrets et de la jurisprudence financière.</li>
-            <li><strong>L'Approche Économique :</strong> Étudie les impacts des politiques budgétaires (recettes et dépenses) sur les agrégats macroéconomiques tels que la croissance, l'emploi, l'investissement privé et l'inflation.</li>
-            <li><strong>L'Approche Managériale :</strong> Portée par le NPM, elle s'intéresse à l'efficacité de la dépense publique, à l'évaluation des politiques publiques, à la rationalisation des choix budgétaires et à l'atteinte d'objectifs mesurables par des indicateurs précis.</li>
-            <li><strong>L'Approche Socio-politique :</strong> Conçoit le budget comme un acte politique majeur reflétant les rapports de force au sein de la société et traduisant les choix idéologiques du gouvernement dans la répartition des charges et de la richesse.</li>
+            <li><strong>L'Approche Juridique :</strong> Analyse les règles administratives et législatives encadrant le budget (élaboration, vote, exécution, comptabilité publique et contrôle). Elle repose sur l'étude des textes constitutionnels, de la LOLF, des décrets et de la jurisprudence financière.
+            <span class="ar"><strong>المقاربة القانونية:</strong> تحلل القواعد الإدارية والتشريعية المؤطرة للميزانية (الإعداد، التصويت، التنفيذ، المحاسبة العمومية والمراقبة). وتعتمد على دراسة النصوص الدستورية، القانون التنظيمي للمالية، المراسيم والاجتهاد القضائي المالي.</span></li>
+            
+            <li><strong>L'Approche Économique :</strong> Étudie les impacts des politiques budgétaires (recettes et dépenses) sur les agrégats macroéconomiques tels que la croissance, l'emploi, l'investissement privé et l'inflation.
+            <span class="ar"><strong>المقاربة الاقتصادية:</strong> تدرس آثار السياسات الميزانياتية (الإيرادات والنفقات) على المؤشرات الماكرو-اقتصادية الكبرى مثل النمو، التشغيل، الاستثمار الخاص والتضخم.</span></li>
+            
+            <li><strong>L'Approche Managériale :</strong> Portée par le NPM, elle s'intéresse à l'efficacité de la dépense publique, à l'évaluation des politiques publiques, à la rationalisation des choix budgétaires et à l'atteinte d'objectifs mesurables par des indicateurs précis.
+            <span class="ar"><strong>المقاربة التدبيرية:</strong> مدفوعة بالحكامة الحديثة، وتهتم بمدى فعالية وجودة النفقة العمومية، تقييم السياسات العمومية، عقلنة الاختيارات الميزانياتية وبلوغ أهداف قابلة للقياس عبر مؤشرات دقيقة.</span></li>
+            
+            <li><strong>L'Approche Socio-politique :</strong> Conçoit le budget comme un acte politique majeur reflétant les rapports de force au sein de la société et traduisant les choix idéologiques du gouvernement dans la répartition des charges et de la richesse.
+            <span class="ar"><strong>المقاربة السوسيو-سياسية:</strong> تعتبر الميزانية عملاً سياسياً كبيراً يعكس موازين القوى داخل المجتمع ويترجم الاختيارات الإيديولوجية للحكومة في توزيع الأعباء والثروة.</span></li>
         </ol>
 
         <h3>Section 3 : Le Cadre Normatif et les Principes Budgétaires</h3>
+        <h3 class="ar">المبحث الثالث: الإطار المعياري والمبادئ الميزانياتية</h3>
         <table>
             <thead>
                 <tr>
-                    <th>Principe Budgétaire</th>
-                    <th>Définition Fondamentale</th>
-                    <th>Dérogations et Exceptions Précises</th>
+                    <th>Principe Budgétaire<br><span class="ar">المبدأ الميزانياتي</span></th>
+                    <th>Définition Fondamentale<br><span class="ar">التعريف الأساسي</span></th>
+                    <th>Dérogations et Exceptions Précises<br><span class="ar">الاستثناءات والتدابير الدقيقة</span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><strong>Annualité</strong> (Art. 3 LOLF)</td>
-                    <td>L'autorisation parlementaire d'encaisser les recettes et d'engager les dépenses est valable pour une durée stricte d'un an (du 1er janvier au 31 décembre).</td>
-                    <td>- <strong>Reports de crédits :</strong> Possibilité de reporter les crédits d'investissement non consommés dans la limite de <strong>30%</strong> (Art. 63 LOLF).<br>- <strong>Engagements pluriannuels :</strong> Autorisations programmées sur plusieurs exercices (Art. 75 de la Constitution).<br>- <strong>Lois de Finances Rectificatives (LFR).</strong></td>
+                    <td>L'autorisation parlementaire d'encaisser les recettes et d'engager les dépenses est valable pour une durée stricte d'un an (du 1er janvier au 31 décembre).
+                    <span class="ar">الترخيص البرلماني باستخلاص المداخيل وصرف النفقات صالح لمدة سنة واحدة صارمة (من 1 يناير إلى 31 ديسمبر).</span></td>
+                    <td>- <strong>Reports de crédits :</strong> Possibilité de reporter les crédits d'investissement non consommés dans la limite de <strong>30%</strong> (Art. 63 LOLF).<br>- <strong>Engagements pluriannuels :</strong> Autorisations programmées sur plusieurs exercices (Art. 75 de la Constitution).<br>- <strong>Lois de Finances Rectificatives (LFR).</strong>
+                    <span class="ar">- <strong>ترحيل الاعتمادات:</strong> إمكانية ترحيل اعتمادات الاستثمار غير المستهلكة في حدود <strong>30%</strong> (المادة 63 من القانون التنظيمي).<br>- <strong>الالتزامات متعددة السنوات:</strong> تراخيص مبرمجة لعدة سنوات (المادة 75 من الدستور).<br>- <strong>قوانين المالية التعديلية.</strong></span></td>
                 </tr>
                 <tr>
                     <td><strong>Unité</strong></td>
-                    <td>Toutes les prévisions de dépenses et de recettes doivent être rassemblées dans un document unique pour offrir une vue d'ensemble claire.</td>
-                    <td>- <strong>Les SEGMA.</strong><br>- <strong>Les Comptes Spéciaux du Trésor (CST).</strong><br>- <strong>Les opérations hors budget :</strong> Budgets autonomes des Établissements et Entreprises Publics (EEP).</td>
+                    <td>Toutes les prévisions de dépenses et de recettes doivent être rassemblées dans un document unique pour offrir une vue d'ensemble claire.
+                    <span class="ar">يجب تجميع جميع توقعات النفقات والإيرادات في وثيقة واحدة لتقديم رؤية إجمالية واضحة.</span></td>
+                    <td>- <strong>Les SEGMA.</strong><br>- <strong>Les Comptes Spéciaux du Trésor (CST).</strong><br>- <strong>Les opérations hors budget :</strong> Budgets autonomes des Établissements et Entreprises Publics (EEP).
+                    <span class="ar">- <strong>مرافقة الدولة المسيرة مستقلة (SEGMA).</strong><br>- <strong>الحسابات الخصوصية للخزينة (CST).</strong><br>- <strong>العمليات خارج الميزانية:</strong> الميزانيات المستقلة للمؤسسات والمقاولات العمومية (EEP).</span></td>
                 </tr>
                 <tr>
                     <td><strong>Universalité</strong></td>
-                    <td>Comprend deux règles constitutionnelles : <strong>La non-compensation</strong> (interdiction de contracter les recettes et les dépenses, règle du produit brut) et <strong>la non-affectation</strong> (toutes les recettes forment une masse commune couvrant n'importe quelle dépense).</td>
-                    <td>- <strong>Les SEGMA et les CST :</strong> Leurs recettes propres sont légalement affectées à leurs dépenses spécifiques.<br>- <strong>Les Fonds de concours :</strong> Dons de personnes morales ou privées affectés par nature à un objectif précis.</td>
+                    <td>Comprend deux règles constitutionnelles : <strong>La non-compensation</strong> (interdiction de contracter les recettes et les dépenses, règle du produit brut) et <strong>la non-affectation</strong> (toutes les recettes forment une masse commune couvrant n'importe quelle dépense).
+                    <span class="ar">تتضمن قاعدتين دستوريتين: <strong>عدم المقاصة</strong> (منع دمج الإيرادات بالنفقات، قاعدة الناتج الإجمالي) و<strong>عدم التخصيص</strong> (جميع الإيرادات تشكل كتلة مشتركة تغطي أي نفقة).</span></td>
+                    <td>- <strong>Les SEGMA et les CST :</strong> Leurs recettes propres sont légalement affectées à leurs dépenses spécifiques.<br>- <strong>Les Fonds de concours :</strong> Dons de personnes morales ou privées affectés par nature à un objectif précis.
+                    <span class="ar">- <strong>مصالح SEGMA والحسابات الخصوصية CST:</strong> تخصص إيراداتها الذاتية قانوناً لتغطية نفقاتها النوعية.<br>- <strong>أموال المساهمات:</strong> هبات من أشخاص معنويين أو خواص تخصص بطبيعتها لهدف محدد.</span></td>
                 </tr>
                 <tr>
                     <td><strong>Spécialité</strong></td>
-                    <td>Les crédits budgétaires ne sont pas accordés de manière globale mais sont spécialisés par ministères, chapitres et programmes (évite l'arbitraire de l'exécutif).</td>
-                    <td>- <strong>Virements de crédits :</strong> Transferts de fonds autorisés entre programmes sous conditions strictes.<br>- <strong>Les crédits globaux :</strong> Dotations provisionnelles pour dépenses imprévues.</td>
+                    <td>Les crédits budgétaires ne sont pas accordés de manière globale mais sont spécialisés par ministères, chapitres et programmes (évite l'arbitraire de l'exécutif).
+                    <span class="ar">لا تمنح الاعتمادات الميزانياتية بصفة إجمالية بل تخصص حسب الوزارات، الفصول والبرامج (تجنباً لتعسف السلطة التنفيذية).</span></td>
+                    <td>- <strong>Virements de crédits :</strong> Transferts de fonds autorisés entre programmes sous conditions strictes.<br>- <strong>Les crédits globaux :</strong> Dotations provisionnelles pour dépenses imprévues.
+                    <span class="ar">- <strong>تحويل الاعتمادات:</strong> نقل الأموال المرخص بها بين البرامج وفق شروط صارمة.<br>- <strong>الاعتمادات الإجمالية:</strong> مخصصات احتياطية للنفقات غير المتوقعة.</span></td>
                 </tr>
                 <tr>
                     <td><strong>Équilibre</strong></td>
-                    <td>Exige une égalité financière stricte entre le total des ressources et le total des charges.</td>
-                    <td>- Obligatoire et contraignant pour les CT.<br>- Pour l'État, il s'agit d'un équilibre macroéconomique (le déficit est toléré et financé par l'emprunt).</td>
+                    <td>Exige une égalité financière stricte entre le total des ressources et le total des charges.
+                    <span class="ar">تتطلب تساوياً مالياً صارماً بين مجموع الموارد ومجموع الأعباء.</span></td>
+                    <td>- Obligatoire et contraignant pour les CT.<br>- Pour l'État, il s'agit d'un équilibre macroéconomique (le déficit est toléré et financé par l'emprunt).
+                    <span class="ar">- إلزامي وحتمي للجماعات الترابية.<br>- بالنسبة للدولة، يتعلق الأمر بتوازن ماكرو-اقتصادي (العجز مسموح ويتم تمويله بالاقتراض).</span></td>
                 </tr>
                 <tr>
                     <td><strong>Sincérité</strong> (Art. 10 LOLF)</td>
-                    <td>Obligation pour le gouvernement de présenter des prévisions de recettes et de dépenses réalistes, sincères et de bonne foi.</td>
-                    <td>Principe limité par les incertitudes économiques internationales majeures (cours des matières premières, crises sanitaires, aléas climatiques).</td>
+                    <td>Le gouvernement doit présenter des prévisions de recettes et de dépenses réalistes, sincères et de bonne foi.
+                    <span class="ar">يجب على الحكومة تقديم توقعات واقعية، صادقة وبحسن نية للإيرادات والنفقات.</span></td>
+                    <td>Principe limité par les incertitudes économiques internationales majeures (cours des matières premières, crises sanitaires, aléas climatiques).
+                    <span class="ar">مبدأ يحد منه عدم اليقين والتقلبات الاقتصادية الدولية الكبرى (أسعار المواد الأساسية، الأزمات الصحية، التقلبات المناخية).</span></td>
                 </tr>
                 <tr>
                     <td><strong>Séparation Ordonnateur/Comptable</strong> (Art. 4 Décret 1967)</td>
-                    <td>Incompatibilité absolue des fonctions : la décision administrative d'engager la dépense (Ordonnateur) est séparée du maniement effectif des fonds publics (Comptable public).</td>
-                    <td>- <strong>Les Régies de recettes et d'avances :</strong> Procédures d'exception pour faciliter la gestion quotidienne des petites transactions publiques.<br>- Procédures de paiement sans ordonnancement préalable.</td>
+                    <td>Incompatibilité absolue des fonctions : la décision administrative d'engager la dépense (Ordonnateur) est séparée du maniement effectif des fonds publics (Comptable public).
+                    <span class="ar">تنافي مطلق بين الوظائف: القرار الإداري بالالتزام بالنفقة (الآمر بالصرف) منفصل عن التدبير والتحصيل الفعلي للأموال العمومية (المحاسب العمومي).</span></td>
+                    <td>- <strong>Les Régies de recettes et d'avances :</strong> Procédures d'exception pour faciliter la gestion quotidienne des petites transactions publiques.<br>- Procédures de paiement sans ordonnancement préalable.
+                    <span class="ar">- <strong>شاسعات المداخيل والنفقات (الرجيعات):</strong> مساطر استثنائية لتسهيل التدبير اليومي للمعاملات العمومية الصغيرة.<br>- مساطر الأداء دون أمر سابق بالصرف.</span></td>
                 </tr>
             </tbody>
         </table>
@@ -291,161 +353,250 @@
 
     <div class="section-content">
         <h2>Chapitre 2 : Le Budget de l'État</h2>
+        <h2 class="ar">الفصل الثاني: ميزانية الدولة</h2>
         
         <h3>Section 1 : Définition et Typologie des Lois de Finances</h3>
+        <h3 class="ar">المبحث الأول: تعريف وأنواع قوانين المالية</h3>
         <p>Le <strong>Budget</strong> constitue l'état comptable descriptif et chiffré des prévisions de ressources et de charges. La <strong>Loi de Finances (LF)</strong> est le support juridique, législatif et politique qui rend ce budget impératif et exécutoire (Art. 1er LOLF).</p>
+        <p class="ar">تشكل <strong>الميزانية</strong> البيان المحاسبي الوصفي والرقمي لتوقعات الموارد والأعباء. بينما <strong>قانون المالية (LF)</strong> هو السند القانوني والتشريعي والسياسي الذي يجعل هذه الميزانية إلزامية ونافذة (المادة 1 من القانون التنظيمي).</p>
         
         <h4>Les Trois Types de Lois de Finances (Art. 2 LOLF) :</h4>
+        <h4>الأنواع الثلاثة لقوانين المالية (المادة 2 من القانون التنظيمي):</h4>
         <ol>
-            <li><strong>La Loi de Finances de l'Année (LFA) :</strong> Acte initial qui prévoit, évalue et autorise les charges et les ressources pour un exercice budgétaire complet.</li>
-            <li><strong>La Loi de Finances Rectificative (LFR) :</strong> Permet de réajuster et de corriger les dispositions de la LFA en cours d'année, en fonction de la modification de la conjoncture économique (Exemple : la LFR de l'année 2020 face à l'impact de la pandémie de Covid-19).</li>
-            <li><strong>La Loi de Règlement (LR) :</strong> Acte de contrôle *a posteriori* qui constate les résultats financiers réels de l'exécution du budget. Elle doit être déposée sur le bureau du Parlement <strong>au plus tard à la fin du premier trimestre de l'exercice financier suivant la clôture de l'année concernée</strong> (Art. 60 LOLF et Art. 76 de la Constitution).</li>
+            <li><strong>La Loi de Finances de l'Année (LFA) :</strong> Acte initial qui prévoit, évalue et autorise les charges et les ressources pour un exercice budgétaire complet.
+            <span class="ar"><strong>قانون المالية للسنة (LFA):</strong> الإجراء الأولي الذي يتوقع، يقيم ويرخص الأعباء والموارد لسنة مالية كاملة.</span></li>
+            
+            <li><strong>La Loi de Finances Rectificative (LFR) :</strong> Permet de réajuster et de corriger les dispositions de la LFA en cours d'année, en fonction de la modification de la conjoncture économique (Exemple : la LFR de l'année 2020 face à l'impact de la pandémie de Covid-19).
+            <span class="ar"><strong>قانون المالية التعديلي (LFR):</strong> يسمح بإعادة ضبط وتصحيح مقتضيات قانون المالية للسنة خلال الجريان، تماشياً مع تغير الظرفية الاقتصادية (مثال: قانون المالية التعديلي لسنة 2020 لمواجهة آثار جائحة كوفيد-19).</span></li>
+            
+            <li><strong>La Loi de Règlement (LR) :</strong> Acte de contrôle *a posteriori* qui constate les résultats financiers réels de l'exécution du budget. Elle doit être déposée sur le bureau du Parlement <strong>au plus tard à la fin du premier trimestre de l'exercice financier suivant la clôture de l'année concernée</strong> (Art. 60 LOLF et Art. 76 de la Constitution).
+            <span class="ar"><strong>قانون التصفية (LR):</strong> إجراء رقابي *بأثر رجعي* يثبت النتائج المالية الحقيقية لتنفيذ الميزانية. ويجب إيداعه بمكتب البرلمان <strong>على أبعد تقدير في نهاية الربع الأول من السنة المالية الموالية لإغلاق السنة المعنية</strong> (المادة 60 من القانون التنظيمي والمادة 76 من الدستور).</span></li>
         </ol>
 
         <h3>Section 2 : Structure et Composantes du Budget de l'État</h3>
+        <h3 class="ar">المبحث الثاني: بنية ومكونات ميزانية الدولة</h3>
         <p>Toute loi de finances est obligatoirement structurée en deux parties distinctes (Art. 42-43 LOLF) :</p>
+        <p class="ar">يتشكل كل قانون مالية إلزامياً من جزأين منفصلين (المواد 42-43 من القانون التنظيمي):</p>
         <ul>
-            <li><strong>Première Partie :</strong> Détermine les conditions générales de l'équilibre financier, autorise la perception des recettes publiques et fixe les plafonds globaux des dépenses. Le vote de la seconde partie ne peut intervenir qu'après l'adoption définitive de cette première partie.</li>
-            <li><strong>Seconde Partie :</strong> Fixe de manière détaillée les crédits par ministères, chapitres et programmes.</li>
+            <li><strong>Première Partie :</strong> Détermine les conditions générales de l'équilibre financier, autorise la perception des recettes publiques et fixe les plafonds globaux des dépenses. Le vote de la seconde partie ne peut intervenir qu'après l'adoption définitive de cette première partie.
+            <span class="ar"><strong>الجزء الأول:</strong> يحدد الشروط العامة للتوازن المالي، ويرخص تحصيل المداخيل العمومية ويضع السقوف الإجمالية للنفقات. ولا يمكن التصويت على الجزء الثاني إلا بعد الاعتماد النهائي لهذا الجزء الأول.</span></li>
+            
+            <li><strong>Seconde Partie :</strong> Fixe de manière détaillée les crédits par ministères, chapitres et programmes.
+            <span class="ar"><strong>الجزء الثاني:</strong> يحدد بشكل مفصل الاعتمادات حسب الوزارات، الفصول والبرامج.</span></li>
         </ul>
 
         <h4>Les Trois Grandes Composantes Budgétaires de l'État :</h4>
+        <h4>المكونات الثلاثة الكبرى لميزانية الدولة:</h4>
         <ol>
             <li><strong>Le Budget Général (BG) :</strong> Regroupe les opérations courantes de l'État. Il est triparti :
+            <span class="ar"><strong>الميزانية العامة (BG):</strong> تجمع العمليات العادية للدولة، وهي ثلاثية الأقسام:</span>
                 <ul>
-                    <li>Les dépenses de fonctionnement (traitements des fonctionnaires, achats de matériel).</li>
-                    <li>Les dépenses d'investissement (infrastructures publiques, constructions).</li>
-                    <li>Les dépenses liées au service de la dette publique (intérêts et amortissement du principal).</li>
+                    <li>Les dépenses de fonctionnement (traitements des fonctionnaires, achats de matériel).<span class="ar">نفقات التسيير (أجور الموظفين، شراء المعدات والأدوات).</span></li>
+                    <li>Les dépenses d'investissement (infrastructures publiques, constructions).<span class="ar">نفقات الاستثمار (البنيات التحتية العمومية، البناء والشغل).</span></li>
+                    <li>Les dépenses liées au service de la dette publique (intérêts et amortissement du principal).<span class="ar">النفقات المتعلقة بالدين العمومي (الفوائد واستهلاك رأس المال الأصلي).</span></li>
                 </ul>
             </li>
-            <li><strong>Les SEGMA :</strong> Services de l'État non dotés de la personnalité morale, mais dont l'activité tend principalement à produire des biens ou à rendre des services donnant lieu à rémunération (Ex: Centres Hospitaliers Universitaires - CHU).</li>
-            <li><strong>Les Comptes Spéciaux du Trésor (CST) :</strong> Destinés à retracer des opérations spécialisées ou bénéficiant d'une continuité pluriannuelle. La LOLF fixe <strong>5 catégories de CST</strong> : les comptes d'affectation spéciale, les comptes de concours financiers, les comptes de dotation, les comptes d'opérations monétaires et les comptes d'adhésion aux organismes internationaux. (Ex: Le Fonds d'appui au financement de l'entrepreneuriat, créé par la LF 2020).</li>
+            <li><strong>Les SEGMA :</strong> Services de l'État non dotés de la personnalité morale, mais dont l'activité tend principalement à produire des biens ou à rendre des services donnant lieu à rémunération (Ex: Centres Hospitaliers Universitaires - CHU).
+            <span class="ar"><strong>مصالح SEGMA:</strong> مصالح للدولة غير متمتعة بالشخصية المعنوية، لكن نشاطها يهدف أساساً إلى إنتاج سلع أو تقديم خدمات بمقابل مالي (مثال: المراكز الاستشفائية الجامعية CHU).</span></li>
+            
+            <li><strong>Les Comptes Spéciaux du Trésor (CST) :</strong> Destinés à retracer des opérations spécialisées ou bénéficiant d'une continuité pluriannuelle. La LOLF fixe <strong>5 catégories de CST</strong> : les comptes d'affectation spéciale, les comptes de concours financiers, les comptes de dotation, les comptes d'opérations monétaires et les comptes d'adhésion aux organismes internationaux. (Ex: Le Fonds d'appui au financement de l'entrepreneuriat, créé par la LF 2020).
+            <span class="ar"><strong>الحسابات الخصوصية للخزينة (CST):</strong> مخصصة لتتبع عمليات متخصصة أو مستمرة لعدة سنوات. ويحدد القانون التنظيمي <strong>5 أصناف من CST</strong>: حسابات التخصيص الخصوصي، حسابات التدخل المالي، حسابات المخصصات، حسابات العمليات النقدية وحسابات الانخراط في المنظمات الدولية (مثال: صندوق دعم تمويل المبادرة المقاولاتية، المحدث بموجب قانون مالية 2020).</span></li>
         </ol>
 
         <div class="box">
-            <strong>Évolution de la Nomenclature Budgétaire :</strong> Prestation historique par nature (Nomenclature classique axée sur les moyens : salaires, matériel) vers une présentation moderne par destination issue de la LOLF 2015 (Budget axé sur la performance : structuration en <strong>programmes</strong> déclinés en objectifs et indicateurs de résultats).
+            <strong>Évolution de la Nomenclature Budgétaire :</strong> Présentation historique par nature (Nomenclature classique axée sur les moyens : salaires, matériel) vers une présentation moderne par destination issue de la LOLF 2015 (Budget axé sur la performance : structuration en <strong>programmes</strong> déclinés en objectifs et indicateurs de résultats).
+            <br><span class="ar"><strong>تطور التبويب الميزانياتي:</strong> الانتقال من العرض التاريخي حسب طبيعة النفقة (التبويب الكلاسيكي القائم على الوسائل: أجور، معدات) إلى العرض الحديث حسب الوجهة والهدف المعتمد في قانون 2015 (ميزانية قائمة على الأداء: الهيكلة في شكل <strong>برامج</strong> تنبثق عنها أهداف ومؤشرات للنتائج).</span>
         </div>
 
         <h3>Section 3 : Le Cycle Budgétaire National (Règle des 4 temps alternés)</h3>
+        <h3 class="ar">المبحث الثالث: الدورة الميزانياتية الوطنية (قاعدة الأزمنة الأربعة المتناوبة)</h3>
         
         <h4>1. La Phase de Préparation (Pouvoir Exécutif) - Calendrier Légal Précis :</h4>
+        <h4>1. مرحلة الإعداد (السلطة التنفيذية) - الجدول الزمني القانوني الدقيق:</h4>
         <ul>
-            <li><strong>Avant le 15 mars :</strong> Circulaire du Chef du Gouvernement adressée aux ministres pour définir les orientations budgétaires prioritaires.</li>
-            <li><strong>Avant le 15 mai :</strong> Réunion des commissions de programmation au sein des ministères pour examiner les propositions de dépenses pluriannuelles.</li>
-            <li><strong>Avant le 15 juillet :</strong> Exposé conjoint du Ministère des Finances et du Plan devant le Conseil du Gouvernement sur le cadrage macroéconomique.</li>
-            <li><strong>Avant le 31 juillet :</strong> Tenue obligatoire du <strong>Débat d'Orientation Budgétaire (DOB)</strong> au Parlement (sans vote), permettant d'associer le pouvoir législatif avant la finalisation du Projet de Loi de Finances (PLF).</li>
-            <li><strong>Septembre - Début Octobre :</strong> Arbitrage final et centralisation du PLF par le Ministère des Finances.</li>
-            <li><strong>Début Octobre :</strong> Adoption des orientations générales du projet en Conseil des Ministres (présidé par Sa Majesté le Roi), puis adoption du texte définitif en Conseil du Gouvernement.</li>
-            <li><strong>Au plus tard le 20 octobre :</strong> Dépôt constitutionnel obligatoire du PLF sur le bureau de la Chambre des Représentants.</li>
+            <li><strong>Avant le 15 mars :</strong> Circulaire du Chef du Gouvernement adressée aux ministres pour définir les orientations budgétaires prioritaires.
+            <span class="ar"><strong>قبل 15 مارس:</strong> دورية رئيس الحكومة الموجهة للوزراء لتحديد التوجهات الميزانياتية ذات الأولوية.</span></li>
+            
+            <li><strong>Avant le 15 mai :</strong> Réunion des commissions de programmation au sein des ministères pour examiner les propositions de dépenses pluriannuelles.
+            <span class="ar"><strong>قبل 15 ماي:</strong> اجتماع لجان البرمجة داخل الوزارات لدراسة مقترحات النفقات متعددة السنوات.</span></li>
+            
+            <li><strong>Avant le 15 juillet :</strong> Exposé conjoint du Ministère des Finances et du Plan devant le Conseil du Gouvernement sur le cadrage macroéconomique.
+            <span class="ar"><strong>قبل 15 يوليوز:</strong> عرض مشترك لوزارة المالية والتخطيط أمام المجلس الحكومي حول الإطار الماكرو-اقتصادي.</span></li>
+            
+            <li><strong>Avant le 31 juillet :</strong> Tenue obligatoire du <strong>Débat d'Orientation Budgétaire (DOB)</strong> au Parlement (sans vote), permettant d'associer le pouvoir législatif avant la finalisation du Projet de Loi de Finances (PLF).
+            <span class="ar"><strong>قبل 31 يوليوز:</strong> العقد الإلزامي لـ <strong>جلسة مناقشة التوجهات الميزانياتية (DOB)</strong> في البرلمان (بدون تصويت)، لإشراك السلطة التشريعية قبل الصياغة النهائية لمشروع قانون المالية (PLF).</span></li>
+            
+            <li><strong>Septembre - Début Octobre :</strong> Arbitrage final et centralisation du PLF par le Ministère des Finances.
+            <span class="ar"><strong>شتمبر - بداية أكتوبر:</strong> التحكيم النهائي وتجميع المشروع من طرف وزارة المالية.</span></li>
+            
+            <li><strong>Début Octobre :</strong> Adoption des orientations générales du projet en Conseil des Ministres (présidé par Sa Majesté le Roi), puis adoption du texte définitif en Conseil du Gouvernement.
+            <span class="ar"><strong>بداية أكتوبر:</strong> المصادقة على التوجهات العامة للمشروع في المجلس الوزاري (برئاسة صاحب الجلالة الملك)، ثم اعتماد النص النهائي في المجلس الحكومي.</span></li>
+            
+            <li><strong>Au plus tard le 20 octobre :</strong> Dépôt constitutionnel obligatoire du PLF sur le bureau de la Chambre des Représentants.
+            <span class="ar"><strong>على أبعد تقدير 20 أكتوبر:</strong> الإيداع الدستوري الإلزامي لمشروع قانون المالية بمكتب مجلس النواب.</span></li>
         </ul>
 
         <h4>2. La Phase de Vote et d'Adoption (Pouvoir Législatif) :</h4>
+        <h4>2. مرحلة التصويت والاعتماد (السلطة التشريعية):</h4>
         <p>Le Parlement dispose d'un délai global et impératif de <strong>58 jours</strong> pour statuer :</p>
+        <p class="ar">يملك البرلمان أجلاً إجماليا وحتمياً مدته <strong>58 يوماً</strong> للبت والمصادقة:</p>
         <ul>
-            <li><strong>30 jours :</strong> Examen et vote par la Chambre des Représentants.</li>
-            <li><strong>22 jours :</strong> Examen et vote par la Chambre des Conseillers.</li>
-            <li><strong>6 jours :</strong> Navette finale et adoption définitive par la Chambre des Représentants en cas de désaccord.</li>
+            <li><strong>30 jours :</strong> Examen et vote par la Chambre des Représentants.<span class="ar"><strong>30 يوماً:</strong> للدراسة والتصويت من طرف مجلس النواب.</span></li>
+            <li><strong>22 jours :</strong> Examen et vote par la Chambre des Conseillers.<span class="ar"><strong>22 يوماً:</strong> للدراسة والتصويت من طرف مجلس المستشارين.</span></li>
+            <li><strong>6 jours :</strong> Navette finale et adoption définitive par la Chambre des Représentants en cas de désaccord.<span class="ar"><strong>6 أيام:</strong> للقراءة النهائية والاعتماد من طرف مجلس النواب في حالة وجود خلاف.</span></li>
         </ul>
 
         <h4>3. La Phase d'Exécution (Pouvoir Exécutif) :</h4>
+        <h4>3. مرحلة التنفيذ (السلطة التنفيذية):</h4>
         <p>En vertu du RGCP (Décret de 1967), les phases se déclinent de manière étanche :</p>
+        <p class="ar">بموجب النظام العام للمحاسبة العمومية (مرسوم 1967)، تنقسم المراحل بشكل صارم:</p>
         <ul>
             <li><strong>Phase Administrative (Ordonnateur) :</strong>
+            <span class="ar"><strong>المرحلة الإدارية (الآمر بالصرف):</strong></span>
                 <ol>
-                    <li><em>L'Engagement :</em> Acte juridique constatant une obligation future de dépense (ex: signature d'un marché public).</li>
-                    <li><em>La Liquidation :</em> Vérification sur pièces de la réalité de la dette et du calcul exact de la somme (constatation du "service fait").</li>
-                    <li><em>L'Ordonnancement :</em> Ordre donné par l'ordonnateur au comptable public de payer la dette de l'État.</li>
+                    <li><em>L'Engagement :</em> Acte juridique constatant une obligation future de dépense (ex: signature d'un marché public).
+                    <span class="ar"><em>الالتزام:</em> إجراء قانوني يثبت نشوء التزام مستقبلي بالنفقة (مثل: توقيع صفقة عمومية).</span></li>
+                    <li><em>La Liquidation :</em> Vérification sur pièces de la réalité de la dette et du calcul exact de la somme (constatation du "service fait").
+                    <span class="ar"><em>التصفية:</em> التأكد بناءً على الوثائق من حقيقة الدين والحساب الدقيق للمبلغ (إثبات "إنجاز الخدمة").</span></li>
+                    <li><em>L'Ordonnancement :</em> Ordre donné par l'ordonnateur au comptable public de payer la dette de l'État.
+                    <span class="ar"><em>الأمر بالصرف:</em> أمر يصدره الآمر بالصرف للمحاسب العمومي لدفع دين الدولة.</span></li>
                 </ol>
             </li>
             <li><strong>Phase Comptable (Comptable Public) :</strong>
+            <span class="ar"><strong>المرحلة المحاسبية (المحاسب العمومي):</strong></span>
                 <ol>
-                    <li><em>Le Paiement :</em> Décaissement effectif des fonds publics après contrôle de la validité de la signature, de la régularité des pièces et de la disponibilité des crédits.</li>
+                    <li><em>Le Paiement :</em> Décaissement effectif des fonds publics après contrôle de la validité de la signature, de la régularité des pièces et de la disponibilité des crédits.
+                    <span class="ar"><em>الأداء:</em> الصرف الفعلي للأموال العمومية بعد مراقبة صحة التوقيع، نظامية الوثائق وتوفر الاعتمادات الكافية.</span></li>
                 </ol>
             </li>
         </ul>
 
         <h4>4. La Phase de Contrôle (Législatif, Administratif et Juridictionnel) :</h4>
+        <h4>4. مرحلة المراقبة (التشريعية، الإدارية والقضائية):</h4>
         <ul>
-            <li><strong>Contrôles Internes (Administratifs) :</strong> Assurés par le Contrôle des Engagements de Dépenses (CED), l'Inspection Générale des Finances (<strong>IGF</strong>, créée en 1960 avec un pouvoir général d'investigation financière), l'Inspection Générale de l'Administration Territoriale (<strong>IGAT</strong>, créée en 1994) et les Inspections Générales des Ministères (IGM).</li>
-            <li><strong>Contrôles Externes :</strong> Assurés par le Parlement (commissions d'enquête, vote de la loi de règlement) et par la Cour des Comptes (créée en 1979, chargée du contrôle supérieur et de la certification des comptes de l'État).</li>
+            <li><strong>Contrôles Internes (Administratifs) :</strong> Assurés par le Contrôle des Engagements de Dépenses (CED), l'Inspection Générale des Finances (<strong>IGF</strong>, créée en 1960 avec un pouvoir général d'investigation financière), l'Inspection Générale de l'Administration Territoriale (<strong>IGAT</strong>, créée en 1994) et les Inspections Générales des Ministères (IGM).
+            <span class="ar"><strong>المراقبة الداخلية (الإدارية):</strong> تضمنها مراقبة الالتزام بالنفقات (CED)، المفتشية العامة للمالية (<strong>IGF</strong>، المحدثة سنة 1960 بسلطة تفتيش مالي شاملة)، المفتشية العامة للإدارة الترابية (<strong>IGAT</strong>، المحدثة سنة 1994) والمفتشيات العامة للوزارات (IGM).</span></li>
+            
+            <li><strong>Contrôles Externes :</strong> Assurés par le Parlement (commissions d'enquête, vote de la loi de règlement) et par la Cour des Comptes (créée en 1979, chargée du contrôle supérieur et de la certification des comptes de l'État).
+            <span class="ar"><strong>المراقبة الخارجية:</strong> يضمنها البرلمان (لجان تقصي الحقائق، التصويت على قانون التصفية) والمجلس الأعلى للحسابات (المحدث سنة 1979، المكلف بالمراقبة العليا والتصديق على حسابات الدولة).</span></li>
         </ul>
     </div>
 
     <div class="section-content">
         <h2>Chapitre 3 : Le Budget des Collectivités Territoriales</h2>
+        <h2 class="ar">الفصل الثالث: ميزانية الجماعات الترابية</h2>
         
         <h3>Section 1 : Cadre Légal et Compétences</h3>
+        <h3 class="ar">المبحث الأول: الإطار القانوني والاختصاصات</h3>
         <p>Le Maroc consacre constitutionnellement le principe de la Décentralisation avancée. Les finances locales sont régies par un corpus juridique spécifique :</p>
+        <p class="ar">يكرس المغرب دستورياً مبدأ الجهوية المتقدمة واللامركزية. وتخضع المالية المحلية لمنظومة قانونية محددة:</p>
         <ul>
-            <li>La Loi Organique n° 113-14 relative aux Communes.</li>
-            <li>La Loi Organique n° 111-14 relative aux Régions (élaboration du Plan de Développement Régional - PDR sur 6 ans).</li>
-            <li>La Loi n° 112-14 relative aux Préfectures et Provinces.</li>
-            <li>La Loi n° 47-06 (30 novembre 2007) fixant les règles de la fiscalité locale.</li>
-            <li>Le Décret n° 2-09-441 (18 février 2010) formant le Règlement de Comptabilité Publique des collectivités locales.</li>
+            <li>La Loi Organique n° 113-14 relative aux Communes.<span class="ar">القانون التنظيمي رقم 113-14 المتعلق بالجماعات.</span></li>
+            <li>La Loi Organique n° 111-14 relative aux Régions (élaboration du Plan de Développement Régional - PDR sur 6 ans).<span class="ar">القانون التنظيمي رقم 111-14 المتعلق بالجهات (صياغة برنامج التنمية الجهوية PDR لـ 6 سنوات).</span></li>
+            <li>La Loi n° 112-14 relative aux Préfectures et Provinces.<span class="ar">القانون التنظيمي رقم 112-14 المتعلق بالعمالات والأقاليم.</span></li>
+            <li>La Loi n° 47-06 (30 novembre 2007) fixant les règles de la fiscalité locale.<span class="ar">القانون رقم 47-06 (30 نوفمبر 2007) المحدد لقواعد الجبايات المحلية.</span></li>
+            <li>Le Décret n° 2-09-441 (18 février 2010) formant le Règlement de Comptabilité Publique des collectivités locales.<span class="ar">المرسوم رقم 2-09-441 (18 فبراير 2010) المنظم للمحاسبة العمومية للجماعات المحلية.</span></li>
         </ul>
 
         <h3>Section 2 : Les Spécificités des Finances Locales</h3>
+        <h3 class="ar">المبحث الثاني: خصوصيات المالية المحلية</h3>
         <ol>
-            <li><strong>L'Équilibre Budgétaire Contraignant :</strong> À la différence de l'État, le budget des CT doit obligatoirement être voté et exécuté en équilibre réel. Le déficit y est formellement interdit par la loi.</li>
-            <li><strong>Un Pouvoir Fiscal Limité :</strong> Les assemblées locales ne disposent pas de la souveraineté fiscale (impossibilité de créer un impôt). Elles gèrent les taxes fixées par la loi nationale (Loi 47-06) et dépendent des transferts financiers de l'État, notamment une quote-part de 30% du produit de la TVA nationale.</li>
-            <li><strong>La Primauté des Dépenses Obligatoires :</strong> Inscription prioritaire et automatique des charges incontournables sous peine de rejet du budget (rémunérations du personnel local, remboursement des annuités des emprunts contractés auprès du FEC, factures d'eau et d'électricité).</li>
-            <li><strong>Le Visa Impératif de la Tutelle :</strong> Le budget local voté n'est exécutoire qu'après l'obtention du <strong>visa</strong> du représentant de l'État (Gouverneur, Wali ou Ministre de l'Intérieur), qui doit être accordé au plus tard le <strong>20 novembre</strong>.</li>
+            <li><strong>L'Équilibre Budgétaire Contraignant :</strong> À la différence de l'État, le budget des CT doit obligatoirement être voté et exécuté en équilibre réel. Le déficit y est formellement interdit par la loi.
+            <span class="ar"><strong>التوازن الميزانياتي الحتمي:</strong> على عكس الدولة، يجب أن يصوت وينفذ budget الجماعات في حالة توازن حقيقي. فالعجز ممنوع منعاً كلياً بقوة القانون.</span></li>
+            
+            <li><strong>Un Pouvoir Fiscal Limité :</strong> Les assemblées locales ne disposent pas de la souveraineté fiscale (impossibilité de créer un impôt). Elles gèrent les taxes fixées par la loi nationale (Loi 47-06) et dépendent des transferts financiers de l'État, notamment une quote-part de 30% du produit de la TVA nationale.
+            <span class="ar"><strong>سلطة جبائية محدودة:</strong> لا تملك المجالس المحلية السيادة الجبائية (عدم إمكانية خلق ضريبة). بل تدير الرسوم المحددة بالقانون الوطني (قانون 47-06) وتعتمد على التحويلات المالية للدولة، لاسيما حصة 30% من منتوج الضريبة الوطنية على القيمة المضافة TVA.</span></li>
+            
+            <li><strong>La Primauté des Dépenses Obligatoires :</strong> Inscription prioritaire et automatique des charges incontournables sous peine de rejet du budget (rémunérations du personnel local, remboursement des annuités des emprunts contractés auprès du FEC, factures d'eau et d'électricité).
+            <span class="ar"><strong>أولوية النفقات الإجبارية:</strong> الإدراج المسبق والتلقائي للأعباء الحتمية تحت طائلة رفض الميزانية (أجور الموظفين المحليين، سداد أقساط القروض لصندوق التجهيز الجماعي FEC، وفواتير الماء والكهرباء).</span></li>
+            
+            <li><strong>Le Visa Impératif de la Tutelle :</strong> Le budget local voté n'est exécutoire qu'après l'obtention du <strong>visa</strong> du représentant de l'État (Gouverneur, Wali ou Ministre de l'Intérieur), qui doit être accordé au plus tard le <strong>20 novembre</strong>.
+            <span class="ar"><strong>التأشيرة الإلزامية لسلطة الوصاية:</strong> الميزانية المحلية المصوت عليها لا تصبح نافذة إلا بعد الحصول على <strong>تأشيرة</strong> ممثل الدولة (العامل، الوالي أو وزير الداخلية)، والتي يجب أن تمنح في أجل أقصاه <strong>20 نوفمبر</strong>.</span></li>
         </ol>
 
         <h3>Section 3 : Structure et Cycle du Budget Local</h3>
+        <h3 class="ar">المبحث الثالث: بنية ودورة الميزانية المحلية</h3>
         <p>Le budget des CT comprend trois entités comptables :</p>
+        <p class="ar">تشمل ميزانية الجماعات الترابية ثلاث كيانات محاسبية:</p>
         <ul>
-            <li><strong>Le Budget Principal :</strong> Structuré en deux parties : la première retrace les recettes et dépenses de <strong>fonctionnement</strong> (opérations courantes) ; la seconde partie décrit les opérations d'<strong>équipement</strong> (investissements locaux).</li>
-            <li><strong>Les Budgets Annexes :</strong> Destinés à décrire les opérations commerciales de services non dotés de la personnalité morale (obligatoirement présentés en équilibre).</li>
-            <li><strong>Les Comptes Spéciaux Locaux :</strong> Divisés en deux catégories (comptes d'affectation spéciale et comptes de dépenses sur dotation).</li>
+            <li><strong>Le Budget Principal :</strong> Structuré en deux parties : la première retrace les recettes et dépenses de <strong>fonctionnement</strong> (opérations courantes) ; la seconde partie décrit les opérations d'<strong>équipement</strong> (investissements locaux).
+            <span class="ar"><strong>الميزانية الرئيسية:</strong> تتكون من جزأين: الأول يتتبع إيرادات ونفقات <strong>التسيير</strong> (العمليات الجارية)؛ والجزء الثاني يصف عمليات <strong>التجهيز</strong> (الاستثمارات المحلية).</span></li>
+            
+            <li><strong>Les Budgets Annexes :</strong> Destinés à décrire les opérations commerciales de services non dotés de la personnalité morale (obligatoirement présentés en équilibre).
+            <span class="ar"><strong>الميزانيات الملحقة:</strong> مخصصة لوصف العمليات التجارية للمرافق غير المتمتعة بالشخصية المعنوية (وتقدم متوازنة وجوباً).</span></li>
+            
+            <li><strong>Les Comptes Spéciaux Locaux :</strong> Divisés en deux catégories (comptes d'affectation spéciale et comptes de dépenses sur dotation).
+            <span class="ar"><strong>الحسابات الخصوصية المحلية:</strong> تنقسم إلى صنفين (حسابات التخصيص الخصوصي وحسابات النفقات من المخصصات).</span></li>
         </ul>
         <p>Le cycle budgétaire local suit les étapes suivantes : Élaboration par le Président du Conseil &rarr; Vote par l'Assemblée délibérante lors de la session ordinaire d'octobre &rarr; Approbation par le Visa de la tutelle administrative (avant le 20 novembre) &rarr; Exécution par l'ordonnateur local et le Trésorier &rarr; Contrôle juridictionnel par les <strong>Cours Régionales des Comptes</strong> (créées en 2004).</p>
+        <p class="ar">تتبع الدورة الميزانياتية المحلية المراحل التالية: الإعداد من طرف رئيس المجلس &rarr; التصويت من طرف المجلس التداولي خلال دورة أكتوبر العادية &rarr; المصادقة عبر تأشيرة الوصاية الإدارية (قبل 20 نوفمبر) &rarr; التنفيذ من طرف الآمر بالصرف المحلي والخازن &rarr; المراقبة القضائية من طرف <strong>المجالس الجهوية للحسابات</strong> (المحدثة سنة 2004).</p>
     </div>
 
     <div class="section-content">
         <h2>Chapitre 4 : La Politique Budgétaire</h2>
+        <h2 class="ar">الفصل الرابع: السياسة الميزانياتية</h2>
         <p>La politique budgétaire consiste en l'utilisation des instruments du budget public (recettes fiscales, dépenses publiques, solde) pour agir de manière délibérée sur la conjoncture macroéconomique afin d'atteindre les quatre objectifs du <strong>Carré Magique de Nicholas Kaldor</strong> : Une croissance économique maximale, le plein emploi, la stabilité des prix (lutte contre l'inflation) et l'équilibre extérieur (balance commerciale).</p>
+        <p class="ar">تتمثل السياسة الميزانياتية في استخدام أدوات الميزانية العامة (الإيرادات الجبائية، النفقات العمومية، والرصيد) للتأثير بشكل إرادي على الظرفية الماكرو-اقتصادية قصد بلوغ الأهداف الأربعة لـ <strong>المربع السحري لنيكولا كالدور</strong>: نمو اقتصادي أقصى، التشغيل الكامل، استقرار الأسعار (محاربة التضخم) والتوازن الخارجي (الميزان التجاري).</p>
 
         <h3>Section 1 : Les Approches Théoriques</h3>
+        <h3 class="ar">المبحث الأول: المقاربات النظرية</h3>
         
         <h4>1. La Théorie Libérale Classique</h4>
+        <h4>1. النظرية الليبرالية التقليدية</h4>
         <p>Prônée par Adam Smith, David Ricardo et Jean-Baptiste Say (Loi des débouchés : <em>"L'offre crée sa propre demande"</em>). Le marché libre converge naturellement vers l'équilibre de plein emploi. Le budget de l'État doit être totalement **neutre**, réduit au minimum et maintenir un équilibre arithmétique rigide. Le déficit public est conçu comme un parasite pour l'économie privée.</p>
+        <p class="ar">دافع عنها آدام سميث، ديفيد ريكاردو وجان باتيست ساي (قانون المنافذ: <em>"كل عرض يخلق طلبه الخاص"</em>). يلتقي السوق الحر طبيعياً عند توازن التشغيل الكامل. ويجب أن تكون ميزانية الدولة **محايدة تماماً**، مختزلة في حدها الأدنى وتحافظ على توازن حسابي جامد. ويعتبر العجز المالي طفيلياً يعوق الاقتصاد الخاص.</p>
 
         <h4>2. La Théorie Keynésienne et les Politiques de Relance</h4>
+        <h4>2. النظرية الكينزية وسياسات الإنعاش</h4>
         <p>Initiée par John Maynard Keynes (1936), elle démontre qu'en période de crise, l'économie peut s'installer durablement dans un équilibre de sous-emploi en raison de l'insuffisance de la <strong>demande effective</strong>. L'État doit mener une action contracyclique en augmentant ses dépenses d'investissement public ($\Delta G$), acceptant ainsi un déficit budgétaire transitoire pour stimuler la production nationale.</p>
+        <p class="ar">أسسها جون ماينارد كينز (1936)، وأثبتت أنه في أوقات الأزمات، يمكن للاقتصاد أن يستقر دائمًا في توازن دون التشغيل الكامل بسبب نقص <strong>الطلب الفعال</strong>. ويجب على الدولة القيام بإجراء ظرفي معاكس عبر الرفع من نفقات الاستثمار العمومي ($\Delta G$)، قابلة بذلك عجزاً ميزانياتياً مؤقتاً لتحفيز الإنتاج الوطني.</p>
         
         <div class="box">
             <strong>Le Mécanisme du Multiplicateur Budgétaire :</strong>
+            <p class="ar"><strong>آلية المضاعف الميزانياتي:</strong></p>
             <p>La formule mathématique s'énonce ainsi :</p>
+            <p class="ar">تتم صياغة الصيغة الرياضية على النحو التالي:</p>
             <div class="formula">ΔY = [1 / (1 - c)] × ΔG</div>
             <p>Où <strong>ΔY</strong> représente la variation finale du revenu national, <strong>ΔG</strong> la variation de la dépense publique initiale de l'État, et <strong>c</strong> la propension marginale à consommer.</p>
+            <p class="ar">حيث يمثل <strong>ΔY</strong> التغير النهائي في الدخل الوطني، و<strong>ΔG</strong> التغير في النفقة العمومية الأولية للدولة، و<strong>c</strong> النزعة الهامشية للاستهلاك.</p>
+            
             <p><strong>Exemple d'application chiffrée :</strong> Si la propension marginale à consommer est de $c = 0{,}8$, le multiplicateur vaut :</p>
+            <p class="ar"><strong>مثال تطبيقي رقمي:</strong> إذا كانت النزعة الهامشية للاستهلاك هي $c = 0.8$، فإن المضاعف يساوي:</p>
             <div class="formula">k = 1 / (1 - 0.8) = 1 / 0.2 = 5</div>
+            
             <p>Si l'État injecte une dépense publique de <strong>100 millions de dirhams</strong> ($\Delta G = 100$), l'effet de cascade sur la consommation et la production va générer une hausse finale du revenu national de :</p>
+            <p class="ar">إذا ضخت الدولة نفقة عمومية بقيمة <strong>100 مليون درهم</strong> ($\Delta G = 100$)، فإن الأثر المتتالي على الاستهلاك والإنتاج سيولد ارتفاعاً نهائياً في الدخل الوطني قدره:</p>
             <div class="formula">ΔY = 5 × 100 = 500 millions de dirhams</div>
         </div>
 
         <h4>3. La Théorie Néolibérale et la Critique de l'Interventionnisme</h4>
+        <h4>3. النظرية الليبرالية الجديدة وانتقاد التدخلية</h4>
         <p>Développée à la suite de la crise de stagflation des années 1970 par l'école monétariste (Friedman) et l'école des anticipations rationnelles (Lucas, Barro). Elle conteste radicalement l'efficacité des relances budgétaires à travers deux concepts :</p>
+        <p class="ar">تطورت على إثر أزمة التضخم الركودي لسنوات السبعينات من طرف المدرسة النقدية (فريدمان) ومدرسة التوقعات العقلانية (لوكاس، بارو). وتطعن جذرياً في فعالية خطط الإنعاش الميزانياتي من خلال مفهومين:</p>
         <ul>
-            <li><strong>Le Théorème d'Équivalence Ricardienne (Robert Barro) :</strong> Les agents économiques anticipent rationnellement que la dette contractée aujourd'hui pour financer la relance se traduira par une hausse des impôts demain. En conséquence, ils n'augmentent pas leur consommation : ils **épargnent** l'intégralité du revenu supplémentaire distribué, annulant ainsi l'effet du multiplicateur keynésien.</li>
+            <li><strong>Le Théorème d'Équivalence Ricardienne (Robert Barro) :</strong> Les agents économiques anticipent rationnellement que la dette contractée aujourd'hui pour financer la relance se traduira par une hausse des impôts demain. En conséquence, ils n'augmentent pas leur consommation : ils **épargnent** l'intégralité du revenu supplémentaire distribué, annulant ainsi l'effet du multiplicateur keynésien.
+            <span class="ar"><strong>نظرية التكافؤ الريكاردي (روبرت بارو):</strong> يتوقع الوكلاء الاقتصاديون عقلانياً أن الدين المتعاقد عليه اليوم لتمويل الإنعاش سيترجم إلى ارتفاع الضرائب غداً. وبناءً عليه، لا يرفعون استهلاكهم: بل **يدخرون** كامل الدخل الإضافي الموزع، مما يلغي أثر المضاعف الكينزي.</span></li>
+            
             <li><strong>Les Effets d'Éviction :</strong>
+            <span class="ar"><strong>آثار المزاحمة:</strong></span>
                 <ul>
-                    <li><strong>L'éviction financière :</strong> Pour financer son déficit budgétaire élevé, l'État emprunte massivement sur les marchés de capitaux nationaux. Cette forte demande publique de fonds entraîne une <strong>hausse des taux d'intérêt</strong>, ce qui renchérit le coût du crédit pour les entreprises privées et les pousse à annuler ou réduire leurs propres investissements productifs.</li>
-                    <li><strong>L'éviction réelle :</strong> L'expansion du secteur public réduit mécaniquement l'espace et les ressources disponibles pour le secteur privé, considéré comme plus efficace.</li>
+                    <li><strong>L'éviction financière :</strong> Pour financer son déficit budgétaire élevé, l'État emprunte massivement sur les marchés de capitaux nationaux. Cette forte demande publique de fonds entraîne une <strong>hausse des taux d'intérêt</strong>, ce qui renchérit le coût du crédit pour les entreprises privées et les pousse à annuler ou réduire leurs propres investissements productifs.
+                    <span class="ar"><strong>المزاحمة المالية:</strong> لتمويل عجزها الميزانياتي المرتفع، تقترض الدولة بكثافة من أسواق الرساميل الوطنية. هذا الطلب العمومي القوي يسبب <strong>ارتفاع أسعار الفائدة</strong>، مما يرفع تكلفة القرض على المقاولات الخاصة ويدفعها لإلغاء أو خفض استثماراتها الإنتاجية.</span></li>
+                    <li><strong>L'éviction réelle :</strong> L'expansion du secteur public réduit mécaniquement l'espace et les ressources disponibles pour le secteur privé, considéré comme plus efficace.
+                    <span class="ar"><strong>المزاحمة الحقيقية:</strong> إن توسع القطاع العمومي يقلص ميكانيكياً المساحة والموارد المتاحة للقطاع الخاص، الذي يعتبر أكثر كفاءة.</span></li>
                 </ul>
             </li>
         </ul>
 
         <div class="alert-box">
             <strong>Règle d'or de la Discipline Budgétaire :</strong> Pour limiter les effets néfastes de l'éviction, les économistes néolibéraux incitent les gouvernements à adopter une stricte discipline budgétaire. Les <strong>dépenses de fonctionnement doivent être exclusivement financées par les recettes fiscales courantes</strong>. Les fonds issus de l'emprunt doivent être réservés **uniquement au financement des dépenses d'investissement**, car elles seules sont capables de générer des revenus futurs permettant d'assurer la soutenabilité de la dette à long terme.
+            <br><span class="ar"><strong>القاعدة الذهبية للانضباط الميزانياتي:</strong> للحد من الآثار الضارة للمزاحمة، يحث الاقتصاديون النيوليبراليون الحكومات على تبني انضباط ميزانياتي صارم. حيث يجب **تمويل نفقات التسيير حصرياً بواسطة المداخيل الضريبية الجارية**. أما الأموال المتأتية من القروض فيجب أن تخصص **فقط لتمويل نفقات الاستثمار**، لأنها الوحيدة القادرة على توليد مداخيل مستقبلية تضمن استدامة الدين على المدى الطويل.</span>
         </div>
     </div>
 </div>
 
 <script>
-    // Script optionnel pour la navigation ou l'interactivité future de la page web
-    console.log("Page de révision des Finances Publiques chargée avec succès.");
+    console.log("Page de révision bilingue des Finances Publiques chargée avec succès.");
 </script>
 </body>
 </html>
